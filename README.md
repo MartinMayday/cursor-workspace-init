@@ -15,31 +15,83 @@ A comprehensive tool for initializing Cursor workspace files for existing reposi
 pip install -r requirements.txt
 ```
 
+## Installation
+
+### Option 1: Clone and Use Directly
+
+```bash
+# Clone the repository to a tools directory
+git clone https://github.com/MartinMayday/cursor-workspace-init.git ~/tools/cursor-workspace-init
+cd ~/tools/cursor-workspace-init
+pip install -r requirements.txt
+```
+
+### Option 2: Add to PATH (Optional)
+
+```bash
+# Add to your shell profile (~/.zshrc or ~/.bashrc)
+export PATH="$PATH:~/tools/cursor-workspace-init"
+alias cursor-init="python ~/tools/cursor-workspace-init/cursor_init.py"
+```
+
 ## Usage
+
+**IMPORTANT**: The tool analyzes the **current working directory** where you run it, not the tool's own location.
 
 ### Analyze Existing Repository
 
-```bash
-python cursor_init.py
-```
+1. Navigate to your project directory:
+   ```bash
+   cd /path/to/your/project
+   ```
 
-This will automatically detect if you're in an existing repository and analyze it to generate Cursor workspace files.
+2. Run the tool (using full path or if in PATH):
+   ```bash
+   # If cloned to ~/tools/cursor-workspace-init
+   python ~/tools/cursor-workspace-init/cursor_init.py
+   
+   # Or if added to PATH
+   cursor-init
+   ```
+
+   This will automatically detect that you're in an existing repository and analyze **your project** to generate Cursor workspace files.
 
 ### New Project Interview
 
-```bash
-python cursor_init.py --new
-```
+1. Navigate to an empty directory (or create one):
+   ```bash
+   mkdir my-new-project
+   cd my-new-project
+   ```
 
-This will start an interactive 5-phase interview to gather project requirements.
+2. Run the tool:
+   ```bash
+   python ~/tools/cursor-workspace-init/cursor_init.py --new
+   ```
+
+   This will start an interactive 5-phase interview to gather project requirements.
 
 ### Generate Scaffolding
 
-```bash
-python cursor_init.py --scaffold
-```
+1. Navigate to where you want the new project:
+   ```bash
+   cd ~/projects
+   ```
 
-This will generate a new project with best practices scaffolding.
+2. Run the tool:
+   ```bash
+   python ~/tools/cursor-workspace-init/cursor_init.py --scaffold
+   ```
+
+   This will generate a new project with best practices scaffolding in the current directory.
+
+### Analyze Specific Directory
+
+You can also analyze a specific directory without navigating to it:
+
+```bash
+python ~/tools/cursor-workspace-init/cursor_init.py --path /path/to/project
+```
 
 ## Project Structure
 
