@@ -1,0 +1,37 @@
+# Cursor Rules for <PLACEHOLDER: PROJECT_NAME>
+
+## Project Information
+- Project Name: <PLACEHOLDER: PROJECT_NAME>
+- Primary Language: <PLACEHOLDER: PRIMARY_LANGUAGE>
+- Project Type: <PLACEHOLDER: PROJECT_TYPE>
+
+## Zero-Assumption Principles
+- Always reference official documentation before making recommendations
+- Cite sources for all architectural decisions
+- Never proceed without documentation backing
+- Extract all variables explicitly - no guessing
+- Never modify original reference files
+
+## Best Practices
+- Use real, network-resolvable hostnames (avoid localhost/127.0.0.1 unless explicitly requested)
+- Follow project coding standards: <PLACEHOLDER: CODING_STANDARDS>
+- Maintain consistent file organization: <PLACEHOLDER: FILE_ORGANIZATION>
+- Write comprehensive tests using: <PLACEHOLDER: TESTING_FRAMEWORK>
+
+## Architecture
+- Architecture Pattern: <PLACEHOLDER: ARCHITECTURE>
+- Deployment Type: <PLACEHOLDER: DEPLOYMENT_TYPE>
+- Networking: <PLACEHOLDER: NETWORKING>
+
+## Technologies
+<PLACEHOLDER: TECHNOLOGIES>
+
+## Services
+<PLACEHOLDER: SERVICES>
+
+## Ports
+<PLACEHOLDER: PORTS>
+
+## Database
+<PLACEHOLDER: DATABASE>
+

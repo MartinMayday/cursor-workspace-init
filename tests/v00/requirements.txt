@@ -1,0 +1,8 @@
+# Python dependencies for test repository
+fastapi==0.100.0
+uvicorn==0.23.1
+pydantic==2.0.0
+pytest==7.4.0
+black==23.7.0
+ruff==0.0.280
+
