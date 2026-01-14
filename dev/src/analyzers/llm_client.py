@@ -42,21 +42,58 @@ def load_llm_config() -> Dict[str, Any]:
     """
     Load LLM configuration from environment variables or .env file.
     
+    Looks for .env in:
+    1. Tool root directory (where cursor-workspace-init is installed)
+    2. Current working directory (project being analyzed)
+    3. dev/src directory relative to tool root
+    
     Returns:
         Configuration dictionary
     """
-    # Try to load .env from project root or dev/src
-    project_root = Path.cwd()
-    env_files = [
-        project_root / ".env",
-        project_root / "dev" / "src" / ".env",
-        Path(__file__).parent.parent.parent / ".env",
-    ]
+    # Get tool root from environment variable (set by init-cursorworkspace.sh)
+    tool_root = os.getenv("CURSOR_INIT_TOOL_ROOT")
+    if tool_root:
+        tool_root = Path(tool_root).resolve()
+    else:
+        # Fallback: try to find tool root by looking for dev/src
+        current_file = Path(__file__).resolve()
+        # If we're in dev/src/analyzers/, go up 3 levels
+        if "dev" in current_file.parts and "src" in current_file.parts:
+            tool_root = current_file.parent.parent.parent
+        else:
+            tool_root = None
     
+    project_root = Path.cwd()
+    
+    # Build list of .env file locations to check (in priority order)
+    env_files = []
+    
+    # 1. Tool root dev/src/.env (highest priority - tool's config)
+    if tool_root:
+        env_files.append(tool_root / "dev" / "src" / ".env")
+        env_files.append(tool_root / ".env")
+    
+    # 2. Current file's directory (if running from tool directory)
+    env_files.append(Path(__file__).parent.parent.parent / ".env")
+    env_files.append(Path(__file__).parent.parent.parent / "dev" / "src" / ".env")
+    
+    # 3. Project root (target project being analyzed)
+    env_files.append(project_root / ".env")
+    env_files.append(project_root / "dev" / "src" / ".env")
+    
+    # Remove duplicates while preserving order
+    seen = set()
+    unique_env_files = []
     for env_file in env_files:
+        if env_file not in seen:
+            seen.add(env_file)
+            unique_env_files.append(env_file)
+    
+    # Load first existing .env file
+    for env_file in unique_env_files:
         if env_file.exists():
             if DOTENV_AVAILABLE:
-                load_dotenv(env_file)
+                load_dotenv(env_file, override=False)  # Don't override existing env vars
             else:
                 _load_env_file_manual(env_file)
             break

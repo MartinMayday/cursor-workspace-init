@@ -98,6 +98,9 @@ fi
 # Set Python path to include tool's source
 export PYTHONPATH="${DEV_SRC_DIR}:${PYTHONPATH:-}"
 
+# Set tool root so LLM client can find .env file
+export CURSOR_INIT_TOOL_ROOT="${TOOL_ROOT}"
+
 # Run the initialization workflow on the current directory
 echo -e "${BLUE}🚀 Initializing Cursor workspace in: ${WORKSPACE_ROOT}${NC}"
 echo ""
