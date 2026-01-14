@@ -1,0 +1,26 @@
+# Agents Configuration for <PLACEHOLDER: PROJECT_NAME>
+
+## Project Context
+- Project Name: <PLACEHOLDER: PROJECT_NAME>
+- Primary Language: <PLACEHOLDER: PRIMARY_LANGUAGE>
+- Project Type: <PLACEHOLDER: PROJECT_TYPE>
+- Architecture: <PLACEHOLDER: ARCHITECTURE>
+- Technologies: <PLACEHOLDER: TECHNOLOGIES>
+
+## Agent Instructions
+- Follow the project's coding standards: <PLACEHOLDER: CODING_STANDARDS>
+- Maintain file organization: <PLACEHOLDER: FILE_ORGANIZATION>
+- Use testing framework: <PLACEHOLDER: TESTING_FRAMEWORK>
+- Reference official documentation for all recommendations
+- Never modify original reference files
+- Extract all variables explicitly - no guessing
+
+## Deployment
+- Deployment Type: <PLACEHOLDER: DEPLOYMENT_TYPE>
+- Networking: <PLACEHOLDER: NETWORKING>
+
+## Services
+<PLACEHOLDER: SERVICES>
+
+## Database
+<PLACEHOLDER: DATABASE>

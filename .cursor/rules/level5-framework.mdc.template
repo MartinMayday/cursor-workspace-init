@@ -1,0 +1,93 @@
+# Level 5: Framework-Specific Rules for <PLACEHOLDER: PROJECT_NAME>
+
+## Framework: <PLACEHOLDER: FRAMEWORK>
+
+### Framework-Specific Guidelines
+- Follow <PLACEHOLDER: FRAMEWORK> best practices and conventions
+- Use framework-specific patterns and idioms
+- Adhere to framework documentation and recommendations
+
+## Framework Best Practices
+
+<PLACEHOLDER: IF_FASTAPI>
+### FastAPI
+- Use Pydantic models for request/response validation
+- Follow FastAPI dependency injection patterns
+- Use async/await appropriately
+- Follow FastAPI routing conventions
+- Use appropriate status codes and error handling
+- Follow FastAPI documentation best practices
+
+<PLACEHOLDER: IF_DJANGO>
+### Django
+- Follow Django project structure conventions
+- Use Django ORM appropriately
+- Follow Django best practices for models, views, and templates
+- Use Django middleware appropriately
+- Follow Django security best practices
+- Follow Django migrations best practices
+
+<PLACEHOLDER: IF_FLASK>
+### Flask
+- Follow Flask application structure
+- Use Flask blueprints for organization
+- Follow Flask routing conventions
+- Use appropriate Flask extensions
+- Follow Flask security best practices
+- Follow Flask configuration best practices
+
+<PLACEHOLDER: IF_REACT>
+### React
+- Follow React component patterns
+- Use hooks appropriately
+- Follow React best practices for state management
+- Use appropriate React patterns (composition, etc.)
+- Follow React performance optimization guidelines
+- Follow React testing best practices
+
+<PLACEHOLDER: IF_NEXTJS>
+### Next.js
+- Follow Next.js routing conventions
+- Use Next.js features appropriately (SSR, SSG, ISR)
+- Follow Next.js best practices for data fetching
+- Use Next.js Image and Link components
+- Follow Next.js performance optimization guidelines
+- Follow Next.js API routes best practices
+
+<PLACEHOLDER: IF_EXPRESS>
+### Express
+- Follow Express routing conventions
+- Use Express middleware appropriately
+- Follow Express best practices for error handling
+- Use appropriate Express patterns
+- Follow Express security best practices
+- Follow Express project structure best practices
+
+<PLACEHOLDER: IF_NESTJS>
+### NestJS
+- Follow NestJS module structure
+- Use NestJS decorators appropriately
+- Follow NestJS dependency injection patterns
+- Use NestJS guards, interceptors, and pipes
+- Follow NestJS best practices
+- Follow NestJS testing best practices
+
+## Framework-Specific Patterns
+
+### Architecture Patterns
+- Use framework-recommended architecture patterns
+- Follow framework conventions for project structure
+- Use framework-specific design patterns
+
+### Testing
+- Use framework-specific testing utilities
+- Follow framework testing patterns
+- Test framework-specific features appropriately
+
+## Framework Documentation
+
+### Reference Documentation
+- Always refer to official <PLACEHOLDER: FRAMEWORK> documentation
+- Follow framework version-specific guidelines
+- Use framework examples and patterns from official docs
+

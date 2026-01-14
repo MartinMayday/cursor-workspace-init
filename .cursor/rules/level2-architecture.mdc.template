@@ -1,0 +1,50 @@
+# Level 2: Architecture Rules for <PLACEHOLDER: PROJECT_NAME>
+
+## Architecture Pattern
+
+### Current Architecture
+- Architecture Pattern: <PLACEHOLDER: ARCHITECTURE>
+- Deployment Type: <PLACEHOLDER: DEPLOYMENT_TYPE>
+- Networking Configuration: <PLACEHOLDER: NETWORKING>
+
+### Architecture Principles
+- Follow established architecture patterns for <PLACEHOLDER: ARCHITECTURE>
+- Maintain separation of concerns
+- Use appropriate design patterns for the architecture
+- Ensure scalability and maintainability
+
+## Deployment Architecture
+
+### Containerization
+<PLACEHOLDER: CONTAINERIZATION>
+
+### Orchestration
+<PLACEHOLDER: ORCHESTRATION>
+
+### Cloud Platforms
+<PLACEHOLDER: CLOUD_PLATFORMS>
+
+## Service Architecture
+
+### Services
+<PLACEHOLDER: SERVICES>
+
+### Ports
+<PLACEHOLDER: PORTS>
+
+### Database
+<PLACEHOLDER: DATABASE>
+
+## Design Patterns
+
+### Recommended Patterns
+- Follow <PLACEHOLDER: ARCHITECTURE> architecture patterns
+- Use appropriate design patterns for the project type
+- Maintain consistency across services/components
+
+### Anti-Patterns to Avoid
+- Avoid tight coupling between components
+- Don't mix concerns across layers
+- Avoid hardcoded configurations
+
+

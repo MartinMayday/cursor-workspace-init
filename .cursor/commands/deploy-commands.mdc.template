@@ -1,0 +1,103 @@
+# Deployment Commands for <PLACEHOLDER: PROJECT_NAME>
+
+## Deployment Type: <PLACEHOLDER: DEPLOYMENT_TYPE>
+
+### Deployment Commands
+
+<PLACEHOLDER: IF_DOCKER>
+#### Docker Deployment
+- Build image: `docker build -t <PLACEHOLDER: PROJECT_NAME>:latest .`
+- Tag image: `docker tag <PLACEHOLDER: PROJECT_NAME>:latest <PLACEHOLDER: PROJECT_NAME>:<version>`
+- Push to registry: `docker push <PLACEHOLDER: PROJECT_NAME>:<version>`
+- Run container: `docker run -p <PLACEHOLDER: PORTS>:<PLACEHOLDER: PORTS> <PLACEHOLDER: PROJECT_NAME>:latest`
+- Run with environment: `docker run --env-file .env <PLACEHOLDER: PROJECT_NAME>:latest`
+
+#### Docker Compose
+- Start services: `docker-compose up`
+- Start in background: `docker-compose up -d`
+- Stop services: `docker-compose down`
+- Rebuild and start: `docker-compose up --build`
+- View logs: `docker-compose logs -f`
+- Scale services: `docker-compose up --scale service-name=3`
+
+<PLACEHOLDER: IF_KUBERNETES>
+#### Kubernetes Deployment
+- Apply manifests: `kubectl apply -f k8s/`
+- Deploy: `kubectl apply -f k8s/deployment.yaml`
+- Update deployment: `kubectl rollout restart deployment/<deployment-name>`
+- View pods: `kubectl get pods`
+- View logs: `kubectl logs -f <pod-name>`
+- Port forward: `kubectl port-forward <pod-name> <local-port>:<pod-port>`
+- Delete deployment: `kubectl delete -f k8s/deployment.yaml`
+
+#### Helm Deployment
+- Install chart: `helm install <release-name> ./charts/<chart-name>`
+- Upgrade release: `helm upgrade <release-name> ./charts/<chart-name>`
+- Uninstall: `helm uninstall <release-name>`
+- List releases: `helm list`
+- Get values: `helm get values <release-name>`
+
+<PLACEHOLDER: IF_AWS>
+#### AWS Deployment
+- Deploy with AWS CLI: Check AWS documentation
+- Deploy with Serverless Framework: `serverless deploy`
+- Deploy with SAM: `sam build && sam deploy`
+- Deploy with Terraform: `terraform apply`
+- Deploy with CDK: `cdk deploy`
+
+<PLACEHOLDER: IF_AZURE>
+#### Azure Deployment
+- Deploy with Azure CLI: `az webapp deploy`
+- Deploy with Azure Functions: `func azure functionapp publish <app-name>`
+- Deploy with Azure DevOps: Check Azure DevOps pipeline
+
+<PLACEHOLDER: IF_GCP>
+#### GCP Deployment
+- Deploy to App Engine: `gcloud app deploy`
+- Deploy to Cloud Run: `gcloud run deploy`
+- Deploy with Cloud Build: `gcloud builds submit`
+
+<PLACEHOLDER: IF_VERCEL>
+#### Vercel Deployment
+- Deploy: `vercel`
+- Deploy to production: `vercel --prod`
+- Preview deployment: `vercel`
+
+<PLACEHOLDER: IF_NETLIFY>
+#### Netlify Deployment
+- Deploy: `netlify deploy`
+- Deploy to production: `netlify deploy --prod`
+- Build and deploy: `netlify build && netlify deploy --prod`
+
+<PLACEHOLDER: IF_HEROKU>
+#### Heroku Deployment
+- Deploy: `git push heroku main`
+- Create app: `heroku create <app-name>`
+- Set config vars: `heroku config:set KEY=value`
+- View logs: `heroku logs --tail`
+- Run one-off dyno: `heroku run <command>`
+
+## Environment Configuration
+
+- Set environment variables: Check deployment platform documentation
+- Configure secrets: Check deployment platform documentation
+- Set build environment: Check deployment platform documentation
+
+## Deployment Checklist
+
+- [ ] Build passes locally
+- [ ] Tests pass
+- [ ] Environment variables configured
+- [ ] Database migrations applied (if applicable)
+- [ ] Secrets and credentials configured
+- [ ] Health checks configured
+- [ ] Monitoring configured
+- [ ] Rollback plan prepared
+
+## Rollback
+
+- Rollback command: Check deployment platform documentation
+- Previous version: Check deployment platform documentation
+- Emergency rollback: Check deployment platform documentation
+
+

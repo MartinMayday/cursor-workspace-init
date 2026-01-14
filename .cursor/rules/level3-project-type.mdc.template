@@ -1,0 +1,76 @@
+# Level 3: Project Type Rules for <PLACEHOLDER: PROJECT_NAME>
+
+## Project Type: <PLACEHOLDER: PROJECT_TYPE>
+
+### Project Type Guidelines
+- Follow best practices for <PLACEHOLDER: PROJECT_TYPE> projects
+- Maintain project structure appropriate for <PLACEHOLDER: PROJECT_TYPE>
+- Use patterns and conventions specific to <PLACEHOLDER: PROJECT_TYPE>
+
+## Project-Specific Structure
+
+### File Organization
+- Maintain consistent file organization: <PLACEHOLDER: FILE_ORGANIZATION>
+- Follow project type conventions
+- Organize code according to project type best practices
+
+## Project Type Best Practices
+
+<PLACEHOLDER: IF_MICROSERVICES>
+### Microservices
+- Maintain service independence
+- Use appropriate inter-service communication patterns
+- Follow microservices deployment best practices
+- Implement proper service discovery and configuration
+- Follow microservices testing strategies
+
+<PLACEHOLDER: IF_MONOREPO>
+### Monorepo
+- Maintain clear package boundaries
+- Use appropriate monorepo tooling
+- Follow monorepo dependency management best practices
+- Maintain consistent structure across packages
+- Follow monorepo testing and build strategies
+
+<PLACEHOLDER: IF_SPA>
+### SPA (Single Page Application)
+- Follow SPA routing best practices
+- Implement proper state management
+- Follow SPA performance optimization guidelines
+- Use appropriate build and deployment tools
+- Follow SPA security best practices
+
+<PLACEHOLDER: IF_API>
+### API
+- Follow RESTful API design principles
+- Implement proper API versioning
+- Use appropriate authentication and authorization
+- Follow API documentation best practices
+- Implement proper error handling and status codes
+
+<PLACEHOLDER: IF_FULL_STACK>
+### Full Stack
+- Maintain clear separation between frontend and backend
+- Follow full-stack architecture best practices
+- Use appropriate communication patterns
+- Follow full-stack testing strategies
+- Maintain consistent coding standards across stack
+
+<PLACEHOLDER: IF_CLI>
+### CLI
+- Follow CLI design best practices
+- Implement proper command structure
+- Use appropriate CLI frameworks and libraries
+- Follow CLI error handling and user experience guidelines
+- Implement proper help and documentation
+
+## Services and Components
+
+### Services
+<PLACEHOLDER: SERVICES>
+
+### Architecture Considerations
+- Consider <PLACEHOLDER: PROJECT_TYPE> specific requirements
+- Follow established patterns for <PLACEHOLDER: PROJECT_TYPE>
+- Maintain consistency with project type conventions
+

@@ -1,0 +1,82 @@
+# Test Commands for <PLACEHOLDER: PROJECT_NAME>
+
+## Testing Framework: <PLACEHOLDER: TESTING_FRAMEWORK>
+
+### Running Tests
+
+<PLACEHOLDER: IF_PYTHON>
+#### Python Testing (pytest)
+- Run all tests: `pytest`
+- Run tests with coverage: `pytest --cov`
+- Run specific test file: `pytest tests/test_file.py`
+- Run specific test: `pytest tests/test_file.py::test_function`
+- Run tests in verbose mode: `pytest -v`
+- Run tests with output: `pytest -s`
+- Run tests matching pattern: `pytest -k "pattern"`
+- Run tests in parallel: `pytest -n auto` (requires pytest-xdist)
+
+#### Python Testing (unittest)
+- Run all tests: `python -m unittest discover`
+- Run specific test file: `python -m unittest tests.test_file`
+- Run specific test: `python -m unittest tests.test_file.TestClass.test_method`
+- Run with verbose output: `python -m unittest -v`
+
+<PLACEHOLDER: IF_JAVASCRIPT>
+#### JavaScript/TypeScript Testing (Jest)
+- Run all tests: `npm test` or `jest`
+- Run tests in watch mode: `npm test -- --watch`
+- Run tests with coverage: `npm test -- --coverage`
+- Run specific test file: `npm test -- test-file.test.js`
+- Run tests matching pattern: `npm test -- -t "pattern"`
+- Run tests in verbose mode: `npm test -- --verbose`
+
+#### JavaScript/TypeScript Testing (Vitest)
+- Run all tests: `npm test` or `vitest`
+- Run tests in watch mode: `vitest --watch`
+- Run tests with coverage: `vitest --coverage`
+- Run specific test file: `vitest test-file.test.js`
+- Run tests in UI mode: `vitest --ui`
+
+#### JavaScript/TypeScript Testing (Mocha)
+- Run all tests: `npm test` or `mocha`
+- Run tests in watch mode: `mocha --watch`
+- Run specific test file: `mocha test-file.test.js`
+- Run tests with reporter: `mocha --reporter spec`
+
+<PLACEHOLDER: IF_GO>
+#### Go Testing
+- Run all tests: `go test ./...`
+- Run tests in current package: `go test`
+- Run tests with verbose output: `go test -v`
+- Run tests with coverage: `go test -cover`
+- Run specific test: `go test -run TestFunctionName`
+- Run tests in parallel: `go test -parallel 4`
+- Generate coverage report: `go test -coverprofile=coverage.out && go tool cover -html=coverage.out`
+
+<PLACEHOLDER: IF_RUST>
+#### Rust Testing
+- Run all tests: `cargo test`
+- Run tests in verbose mode: `cargo test -- --nocapture`
+- Run specific test: `cargo test test_function_name`
+- Run tests with output: `cargo test -- --show-output`
+- Run tests in parallel: `cargo test -- --test-threads=4`
+- Run doc tests: `cargo test --doc`
+
+## Test Coverage
+
+- Generate coverage report: Check project documentation
+- View coverage: Check project documentation
+- Coverage threshold: Check project configuration
+
+## Test Organization
+
+- Unit tests: `tests/unit/` or `tests/`
+- Integration tests: `tests/integration/` or `tests/`
+- E2E tests: `tests/e2e/` or `tests/`
+
+## Continuous Integration
+
+- Tests run automatically on: Check CI/CD configuration
+- Test command in CI: Check CI/CD configuration files
+
+

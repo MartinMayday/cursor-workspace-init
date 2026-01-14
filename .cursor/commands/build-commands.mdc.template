@@ -1,0 +1,86 @@
+# Build Commands for <PLACEHOLDER: PROJECT_NAME>
+
+## Build Tools: <PLACEHOLDER: BUILD_TOOLS>
+
+### Building the Project
+
+<PLACEHOLDER: IF_PYTHON>
+#### Python Build Commands
+- Install dependencies: `pip install -r requirements.txt`
+- Install in development mode: `pip install -e .`
+- Build package: `python setup.py build` or `python -m build`
+- Build wheel: `python -m build --wheel`
+- Build source distribution: `python -m build --sdist`
+- Clean build artifacts: `python setup.py clean --all` or `rm -rf build/ dist/ *.egg-info/`
+
+#### Python with Poetry
+- Install dependencies: `poetry install`
+- Build package: `poetry build`
+- Update dependencies: `poetry update`
+
+#### Python with pipenv
+- Install dependencies: `pipenv install`
+- Install dev dependencies: `pipenv install --dev`
+- Build: `pipenv run python setup.py build`
+
+<PLACEHOLDER: IF_JAVASCRIPT>
+#### JavaScript/TypeScript Build Commands
+- Install dependencies: `npm install`
+- Build project: `npm run build`
+- Build for production: `npm run build:prod` or `NODE_ENV=production npm run build`
+- Clean build: `npm run clean` or `rm -rf dist/ build/`
+- Build in watch mode: `npm run build:watch`
+
+#### JavaScript with Webpack
+- Build: `webpack` or `npm run build`
+- Build for production: `webpack --mode production`
+- Build with analysis: `webpack-bundle-analyzer`
+
+#### JavaScript with Vite
+- Build: `vite build`
+- Build for production: `vite build --mode production`
+- Preview build: `vite preview`
+
+#### JavaScript with Next.js
+- Build: `next build`
+- Start production server: `next start`
+- Export static site: `next export`
+
+<PLACEHOLDER: IF_GO>
+#### Go Build Commands
+- Build: `go build`
+- Build for specific OS: `GOOS=linux GOARCH=amd64 go build`
+- Build with tags: `go build -tags tag1,tag2`
+- Build with race detector: `go build -race`
+- Install: `go install`
+- Clean: `go clean`
+
+<PLACEHOLDER: IF_RUST>
+#### Rust Build Commands
+- Build: `cargo build`
+- Build for release: `cargo build --release`
+- Build specific package: `cargo build -p package-name`
+- Clean build: `cargo clean`
+- Check without building: `cargo check`
+- Build documentation: `cargo doc`
+- Build with features: `cargo build --features feature1,feature2`
+
+## Build Configuration
+
+- Build output directory: Check project configuration
+- Build artifacts: Check project documentation
+- Build environment variables: Check project configuration
+
+## Development Build
+
+- Start development server: Check project documentation
+- Watch mode: Check project documentation
+- Hot reload: Check project documentation
+
+## Production Build
+
+- Optimize for production: Check project documentation
+- Minify assets: Check project documentation
+- Generate source maps: Check project configuration
+
+

@@ -1,0 +1,65 @@
+# Level 4: Language-Specific Rules for <PLACEHOLDER: PROJECT_NAME>
+
+## Primary Language: <PLACEHOLDER: PRIMARY_LANGUAGE>
+
+### Language-Specific Guidelines
+- Follow <PLACEHOLDER: PRIMARY_LANGUAGE> best practices and conventions
+- Use appropriate language-specific tools and patterns
+- Adhere to language style guides and standards
+
+## Language Standards
+
+### Coding Standards
+- Follow coding standards: <PLACEHOLDER: CODING_STANDARDS>
+- Use language-specific linting: <PLACEHOLDER: LINTING_TOOLS>
+- Apply language-specific formatting: <PLACEHOLDER: FORMATTING_TOOLS>
+
+## Language-Specific Best Practices
+
+<PLACEHOLDER: IF_PYTHON>
+### Python
+- Follow PEP 8 style guide
+- Use type hints where appropriate
+- Follow Pythonic patterns and idioms
+- Use virtual environments for dependency management
+- Follow Python best practices for imports and module organization
+
+<PLACEHOLDER: IF_JAVASCRIPT>
+### JavaScript/TypeScript
+- Follow ES6+ best practices
+- Use modern JavaScript/TypeScript features
+- Follow module system conventions
+- Use appropriate package management
+- Follow language-specific patterns and conventions
+
+<PLACEHOLDER: IF_GO>
+### Go
+- Follow Go conventions and idioms
+- Use gofmt for formatting
+- Follow Go naming conventions
+- Use appropriate error handling patterns
+- Follow Go package organization best practices
+
+<PLACEHOLDER: IF_RUST>
+### Rust
+- Follow Rust conventions
+- Use rustfmt for formatting
+- Follow Rust ownership patterns
+- Use appropriate error handling with Result types
+- Follow Rust module and crate organization
+
+## Testing
+
+### Testing Framework
+- Use <PLACEHOLDER: TESTING_FRAMEWORK> for testing
+- Follow language-specific testing patterns
+- Maintain test coverage standards
+
+## Dependencies
+
+### Dependency Management
+- Manage dependencies appropriately for <PLACEHOLDER: PRIMARY_LANGUAGE>
+- Use language-specific package managers
+- Keep dependencies up to date
+- Document dependency requirements
+

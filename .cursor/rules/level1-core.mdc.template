@@ -1,0 +1,50 @@
+# Level 1: Core Rules for <PLACEHOLDER: PROJECT_NAME>
+
+## Zero-Assumption Principles
+
+### Documentation First
+- Always reference official documentation before making recommendations
+- Cite sources for all architectural decisions
+- Never proceed without documentation backing
+- When in doubt, look it up in official docs
+
+### Explicit Extraction
+- Extract all variables explicitly - no guessing
+- Never assume values or configurations
+- Always verify before using
+
+### Reference File Protection
+- Never modify original reference files
+- Work with copies or generated files
+- Preserve original structure and content
+
+## General Best Practices
+
+### Networking
+- Use real, network-resolvable hostnames (FQDN/LAN)
+- Avoid loopback addresses (localhost, 127.0.0.1, ::1, 0.0.0.0) unless explicitly requested
+- Prefer explicit hostnames for clarity and testing
+
+### Code Standards
+- Follow project coding standards: <PLACEHOLDER: CODING_STANDARDS>
+- Maintain consistent file organization: <PLACEHOLDER: FILE_ORGANIZATION>
+- Adhere to project style guide and conventions
+
+### Testing
+- Write comprehensive tests using: <PLACEHOLDER: TESTING_FRAMEWORK>
+- Maintain high test coverage
+- Test edge cases and error conditions
+
+### Code Quality
+- Use linting tools: <PLACEHOLDER: LINTING_TOOLS>
+- Apply formatting tools: <PLACEHOLDER: FORMATTING_TOOLS>
+- Follow language-specific best practices
+
+## Project Context
+
+- Project Name: <PLACEHOLDER: PROJECT_NAME>
+- Primary Language: <PLACEHOLDER: PRIMARY_LANGUAGE>
+- Project Type: <PLACEHOLDER: PROJECT_TYPE>
+- Technologies: <PLACEHOLDER: TECHNOLOGIES>
+
+

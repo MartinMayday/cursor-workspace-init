@@ -1,0 +1,109 @@
+# Docker Commands for <PLACEHOLDER: PROJECT_NAME>
+
+## Docker Configuration
+
+### Building Images
+
+- Build image: `docker build -t <PLACEHOLDER: PROJECT_NAME>:latest .`
+- Build with tag: `docker build -t <PLACEHOLDER: PROJECT_NAME>:<version> .`
+- Build with no cache: `docker build --no-cache -t <PLACEHOLDER: PROJECT_NAME>:latest .`
+- Build with build args: `docker build --build-arg KEY=value -t <PLACEHOLDER: PROJECT_NAME>:latest .`
+- Build for specific platform: `docker build --platform linux/amd64 -t <PLACEHOLDER: PROJECT_NAME>:latest .`
+
+### Running Containers
+
+- Run container: `docker run <PLACEHOLDER: PROJECT_NAME>:latest`
+- Run with port mapping: `docker run -p <PLACEHOLDER: PORTS>:<PLACEHOLDER: PORTS> <PLACEHOLDER: PROJECT_NAME>:latest`
+- Run in background: `docker run -d <PLACEHOLDER: PROJECT_NAME>:latest`
+- Run with name: `docker run --name <container-name> <PLACEHOLDER: PROJECT_NAME>:latest`
+- Run with environment file: `docker run --env-file .env <PLACEHOLDER: PROJECT_NAME>:latest`
+- Run with environment variables: `docker run -e KEY=value <PLACEHOLDER: PROJECT_NAME>:latest`
+- Run with volume: `docker run -v /host/path:/container/path <PLACEHOLDER: PROJECT_NAME>:latest`
+- Run with network: `docker run --network <network-name> <PLACEHOLDER: PROJECT_NAME>:latest`
+- Run interactively: `docker run -it <PLACEHOLDER: PROJECT_NAME>:latest /bin/bash`
+
+### Container Management
+
+- List running containers: `docker ps`
+- List all containers: `docker ps -a`
+- Stop container: `docker stop <container-id>`
+- Start container: `docker start <container-id>`
+- Restart container: `docker restart <container-id>`
+- Remove container: `docker rm <container-id>`
+- Remove running container: `docker rm -f <container-id>`
+- View container logs: `docker logs <container-id>`
+- Follow logs: `docker logs -f <container-id>`
+- Execute command in container: `docker exec -it <container-id> <command>`
+- Inspect container: `docker inspect <container-id>`
+
+### Image Management
+
+- List images: `docker images`
+- Remove image: `docker rmi <image-id>`
+- Remove all unused images: `docker image prune -a`
+- Tag image: `docker tag <PLACEHOLDER: PROJECT_NAME>:latest <PLACEHOLDER: PROJECT_NAME>:<version>`
+- Push to registry: `docker push <PLACEHOLDER: PROJECT_NAME>:<version>`
+- Pull from registry: `docker pull <PLACEHOLDER: PROJECT_NAME>:<version>`
+- Inspect image: `docker inspect <PLACEHOLDER: PROJECT_NAME>:latest`
+- View image history: `docker history <PLACEHOLDER: PROJECT_NAME>:latest`
+
+### Docker Compose
+
+- Start services: `docker-compose up`
+- Start in background: `docker-compose up -d`
+- Stop services: `docker-compose down`
+- Stop and remove volumes: `docker-compose down -v`
+- Rebuild and start: `docker-compose up --build`
+- Rebuild specific service: `docker-compose build <service-name>`
+- Start specific service: `docker-compose up <service-name>`
+- View logs: `docker-compose logs`
+- Follow logs: `docker-compose logs -f`
+- View logs for service: `docker-compose logs -f <service-name>`
+- Scale services: `docker-compose up --scale <service-name>=3`
+- Execute command in service: `docker-compose exec <service-name> <command>`
+- Restart service: `docker-compose restart <service-name>`
+- Stop service: `docker-compose stop <service-name>`
+- Remove stopped containers: `docker-compose rm`
+
+### Docker Networks
+
+- List networks: `docker network ls`
+- Create network: `docker network create <network-name>`
+- Inspect network: `docker network inspect <network-name>`
+- Remove network: `docker network rm <network-name>`
+- Connect container to network: `docker network connect <network-name> <container-id>`
+- Disconnect container from network: `docker network disconnect <network-name> <container-id>`
+
+### Docker Volumes
+
+- List volumes: `docker volume ls`
+- Create volume: `docker volume create <volume-name>`
+- Inspect volume: `docker volume inspect <volume-name>`
+- Remove volume: `docker volume rm <volume-name>`
+- Remove unused volumes: `docker volume prune`
+
+### Docker System
+
+- System information: `docker system info`
+- Disk usage: `docker system df`
+- Clean up: `docker system prune`
+- Clean up all: `docker system prune -a`
+- Remove unused resources: `docker system prune -a --volumes`
+
+### Docker Health Checks
+
+- Health check status: `docker inspect --format='{{.State.Health.Status}}' <container-id>`
+- Health check logs: `docker inspect --format='{{json .State.Health.Log}}' <container-id>`
+
+## Best Practices
+
+- Use multi-stage builds for smaller images
+- Use .dockerignore to exclude unnecessary files
+- Use specific tags instead of `latest` in production
+- Run containers as non-root user when possible
+- Use health checks for long-running containers
+- Clean up unused images and containers regularly
+- Use Docker Compose for multi-container applications
+- Use named volumes for persistent data
+
+
