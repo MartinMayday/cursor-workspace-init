@@ -3,7 +3,7 @@
 # init-cursorworkspace.sh
 # Shell script wrapper for the /init-cursorworkspace command
 #
-# This script can be used standalone or called by the Cursor IDE slash command
+# Usage: Clone the cursor-workspace-init repo, then run this script from your project directory
 #
 
 set -euo pipefail
@@ -15,14 +15,21 @@ YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
-# Script directory
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_ROOT="$(cd "${SCRIPT_DIR}/../.." && pwd)"
+# Find the tool's directory (where this script is located)
+# This script should be in the root of the cloned cursor-workspace-init repository
+SCRIPT_PATH="${BASH_SOURCE[0]}"
+if [[ -L "$SCRIPT_PATH" ]]; then
+    # Resolve symlinks
+    SCRIPT_PATH="$(readlink -f "$SCRIPT_PATH")"
+fi
+TOOL_ROOT="$(cd "$(dirname "$SCRIPT_PATH")" && pwd)"
+
+# Current working directory (where user runs the command - this is the project to initialize)
+WORKSPACE_ROOT="$(pwd)"
 
 # Default values
 ANALYZE_CODEBASE=true
 SKIP_VALIDATION=false
-PROJECT_ROOT_ARG=""
 
 # Parse arguments
 while [[ $# -gt 0 ]]; do
@@ -35,20 +42,15 @@ while [[ $# -gt 0 ]]; do
             SKIP_VALIDATION=true
             shift
             ;;
-        --project-root)
-            PROJECT_ROOT_ARG="$2"
-            shift 2
-            ;;
         --help|-h)
             echo "Usage: $0 [OPTIONS]"
             echo ""
             echo "Options:"
             echo "  --no-analyze          Skip codebase analysis if projectFile.md exists"
             echo "  --skip-validation     Skip validation step"
-            echo "  --project-root PATH    Specify project root directory"
             echo "  --help, -h             Show this help message"
             echo ""
-            echo "This script initializes a Cursor workspace by:"
+            echo "This script initializes a Cursor workspace in the current directory by:"
             echo "  1. Analyzing codebase (or loading existing projectFile.md)"
             echo "  2. Creating/updating projectFile.md"
             echo "  3. Fetching templates from GitHub"
@@ -56,6 +58,8 @@ while [[ $# -gt 0 ]]; do
             echo "  5. Generating .cursor workspace files"
             echo "  6. Validating generated workspace"
             echo "  7. Generating report"
+            echo ""
+            echo "The tool source code should be cloned to: ${TOOL_ROOT}"
             exit 0
             ;;
         *)
@@ -66,59 +70,44 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-# Determine project root
-if [[ -n "$PROJECT_ROOT_ARG" ]]; then
-    PROJECT_ROOT="$(cd "$PROJECT_ROOT_ARG" && pwd)"
-fi
-
 # Check if Python is available
 if ! command -v python3 &> /dev/null; then
     echo -e "${RED}Error: python3 is not installed or not in PATH${NC}"
     exit 1
 fi
 
-# Check if dev/src directory exists
-DEV_SRC_DIR="${PROJECT_ROOT}/dev/src"
+# Check if tool's dev/src directory exists
+DEV_SRC_DIR="${TOOL_ROOT}/dev/src"
 if [[ ! -d "$DEV_SRC_DIR" ]]; then
-    echo -e "${RED}Error: dev/src directory not found at ${DEV_SRC_DIR}${NC}"
-    echo "Please run this script from the project root or specify --project-root"
+    echo -e "${RED}Error: Tool source code not found at ${DEV_SRC_DIR}${NC}"
+    echo ""
+    echo "Please ensure you have cloned the cursor-workspace-init repository."
+    echo "Expected structure:"
+    echo "  ${TOOL_ROOT}/dev/src/"
+    echo "  ${TOOL_ROOT}/init-cursorworkspace.sh"
     exit 1
 fi
 
-# Set Python path
+# Set Python path to include tool's source
 export PYTHONPATH="${DEV_SRC_DIR}:${PYTHONPATH:-}"
 
-# Run the initialization workflow
-echo -e "${BLUE}🚀 Initializing Cursor workspace...${NC}"
+# Run the initialization workflow on the current directory
+echo -e "${BLUE}🚀 Initializing Cursor workspace in: ${WORKSPACE_ROOT}${NC}"
 echo ""
-
-cd "$PROJECT_ROOT"
-
-# Build Python command arguments
-PYTHON_ARGS=()
-if [[ "$ANALYZE_CODEBASE" == "false" ]]; then
-    PYTHON_ARGS+=(--no-analyze)
-fi
-if [[ "$SKIP_VALIDATION" == "true" ]]; then
-    PYTHON_ARGS+=(--skip-validation)
-fi
-if [[ -n "$PROJECT_ROOT_ARG" ]]; then
-    PYTHON_ARGS+=(--project-root "$PROJECT_ROOT")
-fi
 
 # Execute Python script
 python3 -c "
 import sys
 from pathlib import Path
 
-# Add dev/src to path
-sys.path.insert(0, str(Path('${DEV_SRC_DIR}')))
+# Add tool's dev/src to path
+sys.path.insert(0, r'${DEV_SRC_DIR}')
 
 from commands.init_cursorworkspace import run_init_workflow
 
-# Run the initialization workflow
+# Run the initialization workflow on the current working directory
 results = run_init_workflow(
-    project_root='${PROJECT_ROOT}',
+    project_root=r'${WORKSPACE_ROOT}',
     analyze_codebase=${ANALYZE_CODEBASE},
     skip_validation=${SKIP_VALIDATION}
 )
