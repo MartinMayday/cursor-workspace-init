@@ -95,6 +95,19 @@ export PYTHONPATH="${DEV_SRC_DIR}:${PYTHONPATH:-}"
 echo -e "${BLUE}🚀 Initializing Cursor workspace in: ${WORKSPACE_ROOT}${NC}"
 echo ""
 
+# Convert bash booleans to Python booleans
+if [[ "${ANALYZE_CODEBASE}" == "true" ]]; then
+    PYTHON_ANALYZE_CODEBASE="True"
+else
+    PYTHON_ANALYZE_CODEBASE="False"
+fi
+
+if [[ "${SKIP_VALIDATION}" == "true" ]]; then
+    PYTHON_SKIP_VALIDATION="True"
+else
+    PYTHON_SKIP_VALIDATION="False"
+fi
+
 # Execute Python script
 python3 -c "
 import sys
@@ -108,8 +121,8 @@ from commands.init_cursorworkspace import run_init_workflow
 # Run the initialization workflow on the current working directory
 results = run_init_workflow(
     project_root=r'${WORKSPACE_ROOT}',
-    analyze_codebase=${ANALYZE_CODEBASE},
-    skip_validation=${SKIP_VALIDATION}
+    analyze_codebase=${PYTHON_ANALYZE_CODEBASE},
+    skip_validation=${PYTHON_SKIP_VALIDATION}
 )
 
 if results['success']:
