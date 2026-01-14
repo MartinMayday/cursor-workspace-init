@@ -1,0 +1,156 @@
+# Language-Specific Coding Standards and Best Practices
+
+python:
+  coding_standards:
+    primary: "PEP 8"
+    alternatives:
+      - "black"
+      - "ruff"
+      - "flake8"
+    line_length: 88  # black default, PEP 8 recommends 79
+    indentation: "spaces"
+    indent_size: 4
+  
+  best_practices:
+    - "Follow PEP 8 style guide"
+    - "Use type hints for function signatures"
+    - "Use virtual environments for dependency management"
+    - "Follow Pythonic patterns and idioms"
+    - "Use context managers for resource management"
+    - "Prefer list comprehensions over loops when appropriate"
+    - "Use f-strings for string formatting"
+    - "Follow import organization (stdlib, third-party, local)"
+  
+  patterns:
+    - "Use dataclasses for data structures"
+    - "Use type hints with typing module"
+    - "Use async/await for asynchronous operations"
+    - "Use pathlib for file operations"
+    - "Use enum for constants"
+  
+  anti_patterns:
+    - "Don't use mutable default arguments"
+    - "Don't use bare except clauses"
+    - "Don't use global variables"
+    - "Don't use import *"
+    - "Don't mix tabs and spaces"
+
+javascript:
+  coding_standards:
+    primary: "ESLint"
+    alternatives:
+      - "Standard JS"
+      - "Prettier"
+    line_length: 100
+    indentation: "spaces"
+    indent_size: 2
+  
+  best_practices:
+    - "Use const and let, avoid var"
+    - "Use arrow functions for callbacks"
+    - "Use template literals for strings"
+    - "Use destructuring for objects and arrays"
+    - "Use async/await over promises"
+    - "Use strict mode"
+    - "Follow ES6+ features and patterns"
+  
+  patterns:
+    - "Use module.exports or ES6 modules"
+    - "Use async/await for asynchronous code"
+    - "Use optional chaining (?.) and nullish coalescing (??)"
+    - "Use array methods (map, filter, reduce)"
+  
+  anti_patterns:
+    - "Don't use var"
+    - "Don't use == (use ===)"
+    - "Don't use eval()"
+    - "Don't pollute global scope"
+    - "Don't use for...in on arrays"
+
+typescript:
+  coding_standards:
+    primary: "ESLint with TypeScript"
+    alternatives:
+      - "TSLint (deprecated)"
+    line_length: 100
+    indentation: "spaces"
+    indent_size: 2
+  
+  best_practices:
+    - "Use strict TypeScript configuration"
+    - "Define explicit types, avoid any"
+    - "Use interfaces for object shapes"
+    - "Use enums for constants"
+    - "Use type guards for type narrowing"
+    - "Follow TypeScript naming conventions"
+  
+  patterns:
+    - "Use type aliases for complex types"
+    - "Use generics for reusable code"
+    - "Use utility types (Partial, Pick, Omit)"
+    - "Use const assertions"
+  
+  anti_patterns:
+    - "Don't use any type"
+    - "Don't use @ts-ignore without comment"
+    - "Don't use type assertions unnecessarily"
+    - "Don't mix JavaScript and TypeScript patterns"
+
+go:
+  coding_standards:
+    primary: "gofmt"
+    alternatives:
+      - "golangci-lint"
+    line_length: 100
+    indentation: "tabs"
+    indent_size: 1
+  
+  best_practices:
+    - "Follow Go naming conventions"
+    - "Use interfaces for abstraction"
+    - "Return errors explicitly"
+    - "Use context for cancellation"
+    - "Follow Go project layout"
+    - "Use go modules for dependency management"
+  
+  patterns:
+    - "Use error wrapping with fmt.Errorf"
+    - "Use defer for cleanup"
+    - "Use channels for concurrency"
+    - "Use struct embedding"
+  
+  anti_patterns:
+    - "Don't ignore errors"
+    - "Don't use panic for normal errors"
+    - "Don't use init() unnecessarily"
+    - "Don't use global variables"
+
+rust:
+  coding_standards:
+    primary: "rustfmt"
+    alternatives:
+      - "clippy"
+    line_length: 100
+    indentation: "spaces"
+    indent_size: 4
+  
+  best_practices:
+    - "Follow Rust naming conventions"
+    - "Use Result for error handling"
+    - "Use Option for nullable values"
+    - "Follow ownership and borrowing rules"
+    - "Use match for pattern matching"
+  
+  patterns:
+    - "Use ? operator for error propagation"
+    - "Use iterators and closures"
+    - "Use struct and enum for data modeling"
+    - "Use traits for polymorphism"
+  
+  anti_patterns:
+    - "Don't use unwrap() in production code"
+    - "Don't use unsafe unnecessarily"
+    - "Don't clone unnecessarily"
+    - "Don't use Rc/RefCell without reason"
+
+

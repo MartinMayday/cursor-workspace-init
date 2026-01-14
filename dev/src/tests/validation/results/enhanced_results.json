@@ -1,0 +1,612 @@
+[
+  {
+    "scenario_id": "scenario_01",
+    "format_type": "enhanced",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:50:35.741773",
+    "selected_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc",
+      "level4-language.mdc"
+    ],
+    "correct_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 100,
+    "reasoning": "All four rule files should be loaded based on the project context. Level 1 (level1-core.mdc) and Level 2 (level2-architecture.mdc) rules are always loaded as they are marked with 'always_load': true. Level 3 (level3-project-type.mdc) is loaded because the project_type is 'cli' which satisfies the condition 'project_type != unknown'. Level 4 (level4-language.mdc) is loaded because the primary_language is 'python' which satisfies the condition 'primary_language != unknown'. The project context meets all required conditions for loading each rule file in the hierarchy.",
+    "clarification_needed": false,
+    "decision_time": 3.0742626190185547,
+    "raw_response": "{\n  \"selected_files\": [\n    \"level1-core.mdc\",\n    \"level2-architecture.mdc\",\n    \"level3-project-type.mdc\",\n    \"level4-language.mdc\"\n  ],\n  \"reasoning\": \"All four rule files should be loaded based on the project context. Level 1 (level1-core.mdc) and Level 2 (level2-architecture.mdc) rules are always loaded as they are marked with 'always_load': true. Level 3 (level3-project-type.mdc) is loaded because the project_type is 'cli' which satisfies the condition 'project_type != unknown'. Level 4 (level4-language.mdc) is loaded because the primary_language is 'python' which satisfies the condition 'primary_language != unknown'. The project context meets all required conditions for loading each rule file in the hierarchy.\",\n  \"confidence\": 100,\n  \"clarification_needed\": false\n}"
+  },
+  {
+    "scenario_id": "scenario_02",
+    "format_type": "enhanced",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:50:42.061481",
+    "selected_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc",
+      "level4-language.mdc"
+    ],
+    "correct_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 95,
+    "reasoning": "All four rule files should be loaded based on the project context and manifest conditions. Level 1 (level1-core.mdc) and Level 2 (level2-architecture.mdc) rules are marked as 'always_load' and 'required', so they are loaded by default. Level 3 (level3-project-type.mdc) is conditionally loaded because the project_type is 'web' (not 'unknown' or null). Level 4 (level4-language.mdc) is also conditionally loaded because the primary_language is 'javascript' (not 'unknown' or null). All required context fields are present in the project context, and the conditions for loading are satisfied by the project's web type and javascript language.",
+    "clarification_needed": false,
+    "decision_time": 6.317813158035278,
+    "raw_response": "{\n  \"selected_files\": [\n    \"level1-core.mdc\",\n    \"level2-architecture.mdc\",\n    \"level3-project-type.mdc\",\n    \"level4-language.mdc\"\n  ],\n  \"reasoning\": \"All four rule files should be loaded based on the project context and manifest conditions. Level 1 (level1-core.mdc) and Level 2 (level2-architecture.mdc) rules are marked as 'always_load' and 'required', so they are loaded by default. Level 3 (level3-project-type.mdc) is conditionally loaded because the project_type is 'web' (not 'unknown' or null). Level 4 (level4-language.mdc) is also conditionally loaded because the primary_language is 'javascript' (not 'unknown' or null). All required context fields are present in the project context, and the conditions for loading are satisfied by the project's web type and javascript language.\",\n  \"confidence\": 95,\n  \"clarification_needed\": false\n}"
+  },
+  {
+    "scenario_id": "scenario_03",
+    "format_type": "enhanced",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:50:49.350654",
+    "selected_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc",
+      "level4-language.mdc"
+    ],
+    "correct_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 100,
+    "reasoning": "All four rule files should be loaded based on the project context and manifest conditions. Level 1 (level1-core.mdc) and Level 2 (level2-architecture.mdc) rules are marked as 'always_load' and 'required', so they are loaded by default. Level 3 (level3-project-type.mdc) is conditionally loaded because the project_type is 'library' (not 'unknown'), satisfying the trigger condition. Level 4 (level4-language.mdc) is also conditionally loaded because the primary_language is 'go' (not 'unknown'), satisfying its trigger condition. All required context fields (project_type and primary_language) are present in the project context, making the conditional loading criteria fully met.",
+    "clarification_needed": false,
+    "decision_time": 7.287410020828247,
+    "raw_response": "{\n  \"selected_files\": [\n    \"level1-core.mdc\",\n    \"level2-architecture.mdc\",\n    \"level3-project-type.mdc\",\n    \"level4-language.mdc\"\n  ],\n  \"reasoning\": \"All four rule files should be loaded based on the project context and manifest conditions. Level 1 (level1-core.mdc) and Level 2 (level2-architecture.mdc) rules are marked as 'always_load' and 'required', so they are loaded by default. Level 3 (level3-project-type.mdc) is conditionally loaded because the project_type is 'library' (not 'unknown'), satisfying the trigger condition. Level 4 (level4-language.mdc) is also conditionally loaded because the primary_language is 'go' (not 'unknown'), satisfying its trigger condition. All required context fields (project_type and primary_language) are present in the project context, making the conditional loading criteria fully met.\",\n  \"confidence\": 100,\n  \"clarification_needed\": false\n}"
+  },
+  {
+    "scenario_id": "scenario_04",
+    "format_type": "enhanced",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:50:51.201165",
+    "selected_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc",
+      "level4-language.mdc"
+    ],
+    "correct_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 100,
+    "reasoning": "All four rule files should be loaded based on the project context and manifest conditions. Level 1 (level1-core.mdc) and Level 2 (level2-architecture.mdc) rules are marked as always_load=true and required, so they are loaded by default. Level 3 (level3-project-type.mdc) is conditionally loaded because the project_type is 'api' (not 'unknown'), meeting the trigger condition. Level 4 (level4-language.mdc) is also conditionally loaded because the primary_language is 'typescript' (not 'unknown'), meeting its trigger condition. The project context matches all the required conditions for loading these rules in the specified order.",
+    "clarification_needed": false,
+    "decision_time": 1.84849214553833,
+    "raw_response": "{\n  \"selected_files\": [\n    \"level1-core.mdc\",\n    \"level2-architecture.mdc\",\n    \"level3-project-type.mdc\",\n    \"level4-language.mdc\"\n  ],\n  \"reasoning\": \"All four rule files should be loaded based on the project context and manifest conditions. Level 1 (level1-core.mdc) and Level 2 (level2-architecture.mdc) rules are marked as always_load=true and required, so they are loaded by default. Level 3 (level3-project-type.mdc) is conditionally loaded because the project_type is 'api' (not 'unknown'), meeting the trigger condition. Level 4 (level4-language.mdc) is also conditionally loaded because the primary_language is 'typescript' (not 'unknown'), meeting its trigger condition. The project context matches all the required conditions for loading these rules in the specified order.\",\n  \"confidence\": 100,\n  \"clarification_needed\": false\n}"
+  },
+  {
+    "scenario_id": "scenario_05",
+    "format_type": "enhanced",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:50:52.998786",
+    "selected_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc",
+      "level4-language.mdc"
+    ],
+    "correct_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 100,
+    "reasoning": "All four rule files should be loaded based on the project context and manifest conditions. Level 1 (level1-core.mdc) and Level 2 (level2-architecture.mdc) rules are marked as 'always_load' and 'required', so they are loaded by default. Level 3 (level3-project-type.mdc) is conditionally loaded because the project_type is 'cli' (not 'unknown'), satisfying the trigger condition. Level 4 (level4-language.mdc) is also conditionally loaded because the primary_language is 'rust' (not 'unknown'), satisfying its trigger condition. The project context matches all the required conditions for loading these rules in the specified order.",
+    "clarification_needed": false,
+    "decision_time": 1.7956759929656982,
+    "raw_response": "{\n  \"selected_files\": [\n    \"level1-core.mdc\",\n    \"level2-architecture.mdc\",\n    \"level3-project-type.mdc\",\n    \"level4-language.mdc\"\n  ],\n  \"reasoning\": \"All four rule files should be loaded based on the project context and manifest conditions. Level 1 (level1-core.mdc) and Level 2 (level2-architecture.mdc) rules are marked as 'always_load' and 'required', so they are loaded by default. Level 3 (level3-project-type.mdc) is conditionally loaded because the project_type is 'cli' (not 'unknown'), satisfying the trigger condition. Level 4 (level4-language.mdc) is also conditionally loaded because the primary_language is 'rust' (not 'unknown'), satisfying its trigger condition. The project context matches all the required conditions for loading these rules in the specified order.\",\n  \"confidence\": 100,\n  \"clarification_needed\": false\n}"
+  },
+  {
+    "scenario_id": "scenario_06",
+    "format_type": "enhanced",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:51:01.698041",
+    "selected_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc",
+      "level4-language.mdc"
+    ],
+    "correct_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 95,
+    "reasoning": "All four rule files should be loaded based on the project context and manifest conditions. Level 1 (core.mdc) and Level 2 (architecture.mdc) rules are marked as 'always_load' and 'required', so they are loaded by default. Level 3 (project-type.mdc) is conditionally loaded because the project_type is 'web' (not 'unknown' or null). Level 4 (language.mdc) is conditionally loaded because the primary_language is 'python' (not 'unknown' or null). Since all context requirements are met and the project matches the criteria for all conditional rules, all files should be loaded in order of their load_order (1, 2, 3, 4).",
+    "clarification_needed": false,
+    "decision_time": 8.697344064712524,
+    "raw_response": "{\n  \"selected_files\": [\n    \"level1-core.mdc\",\n    \"level2-architecture.mdc\",\n    \"level3-project-type.mdc\",\n    \"level4-language.mdc\"\n  ],\n  \"reasoning\": \"All four rule files should be loaded based on the project context and manifest conditions. Level 1 (core.mdc) and Level 2 (architecture.mdc) rules are marked as 'always_load' and 'required', so they are loaded by default. Level 3 (project-type.mdc) is conditionally loaded because the project_type is 'web' (not 'unknown' or null). Level 4 (language.mdc) is conditionally loaded because the primary_language is 'python' (not 'unknown' or null). Since all context requirements are met and the project matches the criteria for all conditional rules, all files should be loaded in order of their load_order (1, 2, 3, 4).\",\n  \"confidence\": 95,\n  \"clarification_needed\": false\n}"
+  },
+  {
+    "scenario_id": "scenario_07",
+    "format_type": "enhanced",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:51:08.314605",
+    "selected_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc",
+      "level4-language.mdc"
+    ],
+    "correct_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 100,
+    "reasoning": "All four rule files should be loaded based on the project context and manifest conditions. Level 1 (level1-core.mdc) and Level 2 (level2-architecture.mdc) rules are always loaded as they have 'always_load': true. Level 3 (level3-project-type.mdc) is loaded because the project_type is 'api' (not 'unknown' or null). Level 4 (level4-language.mdc) is loaded because the primary_language is 'javascript' (not 'unknown' or null). Each file's conditions are satisfied by the project context, and all files are required except for the project-type and language-specific rules which are conditionally required but triggered by the project context.",
+    "clarification_needed": false,
+    "decision_time": 6.615231990814209,
+    "raw_response": "{\n  \"selected_files\": [\n    \"level1-core.mdc\",\n    \"level2-architecture.mdc\",\n    \"level3-project-type.mdc\",\n    \"level4-language.mdc\"\n  ],\n  \"reasoning\": \"All four rule files should be loaded based on the project context and manifest conditions. Level 1 (level1-core.mdc) and Level 2 (level2-architecture.mdc) rules are always loaded as they have 'always_load': true. Level 3 (level3-project-type.mdc) is loaded because the project_type is 'api' (not 'unknown' or null). Level 4 (level4-language.mdc) is loaded because the primary_language is 'javascript' (not 'unknown' or null). Each file's conditions are satisfied by the project context, and all files are required except for the project-type and language-specific rules which are conditionally required but triggered by the project context.\",\n  \"confidence\": 100,\n  \"clarification_needed\": false\n}"
+  },
+  {
+    "scenario_id": "scenario_08",
+    "format_type": "enhanced",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:51:15.880420",
+    "selected_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc",
+      "level4-language.mdc"
+    ],
+    "correct_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 100,
+    "reasoning": "All four rule files should be loaded based on the project context and manifest conditions. Level 1 (level1-core.mdc) and Level 2 (level2-architecture.mdc) rules are marked as 'always_load' and 'required', so they are loaded by default. Level 3 (level3-project-type.mdc) applies because the project_type is 'web' (not 'unknown'), and Level 4 (level4-language.mdc) applies because the primary_language is 'typescript' (not 'unknown'). All required context fields are present in the project context, and the trigger conditions for the conditional rules are met.",
+    "clarification_needed": false,
+    "decision_time": 7.564049959182739,
+    "raw_response": "{\n  \"selected_files\": [\n    \"level1-core.mdc\",\n    \"level2-architecture.mdc\",\n    \"level3-project-type.mdc\",\n    \"level4-language.mdc\"\n  ],\n  \"reasoning\": \"All four rule files should be loaded based on the project context and manifest conditions. Level 1 (level1-core.mdc) and Level 2 (level2-architecture.mdc) rules are marked as 'always_load' and 'required', so they are loaded by default. Level 3 (level3-project-type.mdc) applies because the project_type is 'web' (not 'unknown'), and Level 4 (level4-language.mdc) applies because the primary_language is 'typescript' (not 'unknown'). All required context fields are present in the project context, and the trigger conditions for the conditional rules are met.\",\n  \"confidence\": 100,\n  \"clarification_needed\": false\n}"
+  },
+  {
+    "scenario_id": "scenario_09",
+    "format_type": "enhanced",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:51:22.295130",
+    "selected_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc",
+      "level4-language.mdc"
+    ],
+    "correct_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 100,
+    "reasoning": "All four rule files should be loaded based on the project context and manifest conditions. Level 1 (level1-core.mdc) and Level 2 (level2-architecture.mdc) rules are always loaded as they have 'always_load': true. Level 3 (level3-project-type.mdc) is loaded because the project_type is 'api' (not 'unknown' or null). Level 4 (level4-language.mdc) is loaded because the primary_language is 'go' (not 'unknown' or null). Each file's conditions are satisfied by the project context, and all files are required except for the project-type and language-specific rules which are conditionally required but triggered by the project context.",
+    "clarification_needed": false,
+    "decision_time": 6.4136271476745605,
+    "raw_response": "{\n  \"selected_files\": [\n    \"level1-core.mdc\",\n    \"level2-architecture.mdc\",\n    \"level3-project-type.mdc\",\n    \"level4-language.mdc\"\n  ],\n  \"reasoning\": \"All four rule files should be loaded based on the project context and manifest conditions. Level 1 (level1-core.mdc) and Level 2 (level2-architecture.mdc) rules are always loaded as they have 'always_load': true. Level 3 (level3-project-type.mdc) is loaded because the project_type is 'api' (not 'unknown' or null). Level 4 (level4-language.mdc) is loaded because the primary_language is 'go' (not 'unknown' or null). Each file's conditions are satisfied by the project context, and all files are required except for the project-type and language-specific rules which are conditionally required but triggered by the project context.\",\n  \"confidence\": 100,\n  \"clarification_needed\": false\n}"
+  },
+  {
+    "scenario_id": "scenario_10",
+    "format_type": "enhanced",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:51:29.719395",
+    "selected_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc",
+      "level4-language.mdc"
+    ],
+    "correct_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 100,
+    "reasoning": "All four rule files should be loaded based on the project context. Level 1 (level1-core.mdc) and Level 2 (level2-architecture.mdc) rules are always loaded as they are marked with 'always_load': true. Level 3 (level3-project-type.mdc) is loaded because the project_type is 'api' (not 'unknown' or null). Level 4 (level4-language.mdc) is loaded because the primary_language is 'python' (not 'unknown' or null). The project context satisfies all the conditional requirements for loading each rule file in the hierarchy.",
+    "clarification_needed": false,
+    "decision_time": 7.421233892440796,
+    "raw_response": "{\n  \"selected_files\": [\n    \"level1-core.mdc\",\n    \"level2-architecture.mdc\",\n    \"level3-project-type.mdc\",\n    \"level4-language.mdc\"\n  ],\n  \"reasoning\": \"All four rule files should be loaded based on the project context. Level 1 (level1-core.mdc) and Level 2 (level2-architecture.mdc) rules are always loaded as they are marked with 'always_load': true. Level 3 (level3-project-type.mdc) is loaded because the project_type is 'api' (not 'unknown' or null). Level 4 (level4-language.mdc) is loaded because the primary_language is 'python' (not 'unknown' or null). The project context satisfies all the conditional requirements for loading each rule file in the hierarchy.\",\n  \"confidence\": 100,\n  \"clarification_needed\": false\n}"
+  },
+  {
+    "scenario_id": "scenario_11",
+    "format_type": "enhanced",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:51:36.267944",
+    "selected_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc",
+      "level4-language.mdc"
+    ],
+    "correct_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 95,
+    "reasoning": "All four rule files should be loaded based on the project context and manifest conditions. Level 1 (level1-core.mdc) and Level 2 (level2-architecture.mdc) rules are marked as always_load=true and required, so they are loaded by default. Level 3 (level3-project-type.mdc) is conditionally loaded because the project_type is 'web' (not 'unknown' or null). Level 4 (level4-language.mdc) is conditionally loaded because the primary_language is 'typescript' (not 'unknown' or null). All required context fields are present in the project context, and the trigger conditions for the conditional rules are met.",
+    "clarification_needed": false,
+    "decision_time": 6.5475850105285645,
+    "raw_response": "{\n  \"selected_files\": [\n    \"level1-core.mdc\",\n    \"level2-architecture.mdc\",\n    \"level3-project-type.mdc\",\n    \"level4-language.mdc\"\n  ],\n  \"reasoning\": \"All four rule files should be loaded based on the project context and manifest conditions. Level 1 (level1-core.mdc) and Level 2 (level2-architecture.mdc) rules are marked as always_load=true and required, so they are loaded by default. Level 3 (level3-project-type.mdc) is conditionally loaded because the project_type is 'web' (not 'unknown' or null). Level 4 (level4-language.mdc) is conditionally loaded because the primary_language is 'typescript' (not 'unknown' or null). All required context fields are present in the project context, and the trigger conditions for the conditional rules are met.\",\n  \"confidence\": 95,\n  \"clarification_needed\": false\n}"
+  },
+  {
+    "scenario_id": "scenario_12",
+    "format_type": "enhanced",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:51:39.633038",
+    "selected_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc",
+      "level4-language.mdc"
+    ],
+    "correct_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 95,
+    "reasoning": "All four rule files should be loaded based on the project context and manifest conditions. Level 1 (level1-core.mdc) and Level 2 (level2-architecture.mdc) rules are marked as always_load=true and required, so they are loaded by default. Level 3 (level3-project-type.mdc) is conditionally loaded because the project_type is 'web' (not 'unknown'), satisfying the trigger condition. Level 4 (level4-language.mdc) is conditionally loaded because the primary_language is 'typescript' (not 'unknown'), satisfying the trigger condition. All required context fields (project_type and primary_language) are present in the project context, making the conditional loading criteria fully met.",
+    "clarification_needed": false,
+    "decision_time": 3.363192081451416,
+    "raw_response": "{\n  \"selected_files\": [\n    \"level1-core.mdc\",\n    \"level2-architecture.mdc\",\n    \"level3-project-type.mdc\",\n    \"level4-language.mdc\"\n  ],\n  \"reasoning\": \"All four rule files should be loaded based on the project context and manifest conditions. Level 1 (level1-core.mdc) and Level 2 (level2-architecture.mdc) rules are marked as always_load=true and required, so they are loaded by default. Level 3 (level3-project-type.mdc) is conditionally loaded because the project_type is 'web' (not 'unknown'), satisfying the trigger condition. Level 4 (level4-language.mdc) is conditionally loaded because the primary_language is 'typescript' (not 'unknown'), satisfying the trigger condition. All required context fields (project_type and primary_language) are present in the project context, making the conditional loading criteria fully met.\",\n  \"confidence\": 95,\n  \"clarification_needed\": false\n}"
+  },
+  {
+    "scenario_id": "scenario_13",
+    "format_type": "enhanced",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:51:40.770380",
+    "selected_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level4-language.mdc"
+    ],
+    "correct_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 95,
+    "reasoning": "All three rule files should be loaded based on the manifest conditions and project context. Level 1 core rules are always loaded as they are fundamental to all projects. Level 2 architecture rules are also always loaded as they apply to all projects. Level 4 language rules should be loaded because the project context specifies primary_language as 'python', which satisfies the condition 'when primary_language is python and not unknown'. The language-specific rules are designed to load when the primary language is not 'unknown' and matches the project's python language requirement.",
+    "clarification_needed": false,
+    "decision_time": 1.1363208293914795,
+    "raw_response": "{\n  \"selected_files\": [\"level1-core.mdc\", \"level2-architecture.mdc\", \"level4-language.mdc\"],\n  \"reasoning\": \"All three rule files should be loaded based on the manifest conditions and project context. Level 1 core rules are always loaded as they are fundamental to all projects. Level 2 architecture rules are also always loaded as they apply to all projects. Level 4 language rules should be loaded because the project context specifies primary_language as 'python', which satisfies the condition 'when primary_language is python and not unknown'. The language-specific rules are designed to load when the primary language is not 'unknown' and matches the project's python language requirement.\",\n  \"confidence\": 95,\n  \"clarification_needed\": false\n}"
+  },
+  {
+    "scenario_id": "scenario_14",
+    "format_type": "enhanced",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:51:44.441893",
+    "selected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "correct_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 95,
+    "reasoning": "All three rule files should be loaded based on the project context. Level 1 core rules are always loaded as they contain fundamental principles that apply to all projects. Level 2 architecture rules are also always loaded as they contain universal architecture guidelines. Level 3 project-type rules should be loaded because the project context specifies project_type as 'cli', which satisfies the condition 'when project_type is cli and not unknown'. The 'not unknown' condition is met since project_type is explicitly 'cli' rather than 'unknown' or null.",
+    "clarification_needed": false,
+    "decision_time": 3.6704397201538086,
+    "raw_response": "{\n  \"selected_files\": [\"level1-core.mdc\", \"level2-architecture.mdc\", \"level3-project-type.mdc\"],\n  \"reasoning\": \"All three rule files should be loaded based on the project context. Level 1 core rules are always loaded as they contain fundamental principles that apply to all projects. Level 2 architecture rules are also always loaded as they contain universal architecture guidelines. Level 3 project-type rules should be loaded because the project context specifies project_type as 'cli', which satisfies the condition 'when project_type is cli and not unknown'. The 'not unknown' condition is met since project_type is explicitly 'cli' rather than 'unknown' or null.\",\n  \"confidence\": 95,\n  \"clarification_needed\": false\n}"
+  },
+  {
+    "scenario_id": "scenario_15",
+    "format_type": "enhanced",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:51:45.557993",
+    "selected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "correct_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 95,
+    "reasoning": "All three rule files should be loaded based on the project context and manifest conditions. Level 1 core rules are always loaded as they are fundamental to all projects. Level 2 architecture rules are also always loaded as they apply to all projects. Level 3 project-type-specific rules should be loaded because the project context specifies project_type as 'web', which satisfies the condition 'project_type != unknown' and 'project_type != null'. The project context provides sufficient information to meet the requirements for loading all three rule files in the correct order.",
+    "clarification_needed": false,
+    "decision_time": 1.1148641109466553,
+    "raw_response": "{\n  \"selected_files\": [\"level1-core.mdc\", \"level2-architecture.mdc\", \"level3-project-type.mdc\"],\n  \"reasoning\": \"All three rule files should be loaded based on the project context and manifest conditions. Level 1 core rules are always loaded as they are fundamental to all projects. Level 2 architecture rules are also always loaded as they apply to all projects. Level 3 project-type-specific rules should be loaded because the project context specifies project_type as 'web', which satisfies the condition 'project_type != unknown' and 'project_type != null'. The project context provides sufficient information to meet the requirements for loading all three rule files in the correct order.\",\n  \"confidence\": 95,\n  \"clarification_needed\": false\n}"
+  },
+  {
+    "scenario_id": "scenario_16",
+    "format_type": "enhanced",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:51:46.722102",
+    "selected_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level4-language.mdc"
+    ],
+    "correct_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 100,
+    "reasoning": "All three files should be loaded based on the manifest conditions and project context. Level 1 and Level 2 rules are marked as 'always_load: true' and have no context requirements, so they are loaded by default. Level 4 rules have conditions that are satisfied by the project context: primary_language is 'javascript' (not 'unknown' and not null), which triggers the load action for the language-specific rules.",
+    "clarification_needed": false,
+    "decision_time": 1.1628179550170898,
+    "raw_response": "{\n  \"selected_files\": [\"level1-core.mdc\", \"level2-architecture.mdc\", \"level4-language.mdc\"],\n  \"reasoning\": \"All three files should be loaded based on the manifest conditions and project context. Level 1 and Level 2 rules are marked as 'always_load: true' and have no context requirements, so they are loaded by default. Level 4 rules have conditions that are satisfied by the project context: primary_language is 'javascript' (not 'unknown' and not null), which triggers the load action for the language-specific rules.\",\n  \"confidence\": 100,\n  \"clarification_needed\": false\n}"
+  },
+  {
+    "scenario_id": "scenario_17",
+    "format_type": "enhanced",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:51:53.421153",
+    "selected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc"
+    ],
+    "correct_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 95,
+    "reasoning": "Both rule files should be loaded because they are marked as 'required: true' and 'always_load: true' in their respective conditions. The manifest shows a progressive loading hierarchy where Level 1 rules (core) are loaded first, followed by Level 2 rules (architecture). Since there are no context-specific requirements or triggers that would prevent these files from loading, and both are fundamental to project rules, they should both be loaded. The project context is minimal but doesn't indicate any restrictions or specific conditions that would exclude these general-purpose rule files.",
+    "clarification_needed": false,
+    "decision_time": 6.698016881942749,
+    "raw_response": "{\n  \"selected_files\": [\"level1-core.mdc\", \"level2-architecture.mdc\"],\n  \"reasoning\": \"Both rule files should be loaded because they are marked as 'required: true' and 'always_load: true' in their respective conditions. The manifest shows a progressive loading hierarchy where Level 1 rules (core) are loaded first, followed by Level 2 rules (architecture). Since there are no context-specific requirements or triggers that would prevent these files from loading, and both are fundamental to project rules, they should both be loaded. The project context is minimal but doesn't indicate any restrictions or specific conditions that would exclude these general-purpose rule files.\",\n  \"confidence\": 95,\n  \"clarification_needed\": false\n}"
+  },
+  {
+    "scenario_id": "scenario_18",
+    "format_type": "enhanced",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:51:55.053709",
+    "selected_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level4-language.mdc"
+    ],
+    "correct_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 95,
+    "reasoning": "Based on the manifest and project context, all three rule files should be loaded. Level1-core.mdc is always loaded as it contains fundamental rules that apply to all projects. Level2-architecture.mdc is also always loaded as it contains architecture rules that apply to all projects. Level4-language.mdc should be loaded because the project's primary_language is 'python', which satisfies the condition 'when primary_language is python and not unknown'. The triggers in the manifest correctly evaluate to true for the project context, making this language-specific rule applicable.",
+    "clarification_needed": false,
+    "decision_time": 1.6312098503112793,
+    "raw_response": "{\n  \"selected_files\": [\"level1-core.mdc\", \"level2-architecture.mdc\", \"level4-language.mdc\"],\n  \"reasoning\": \"Based on the manifest and project context, all three rule files should be loaded. Level1-core.mdc is always loaded as it contains fundamental rules that apply to all projects. Level2-architecture.mdc is also always loaded as it contains architecture rules that apply to all projects. Level4-language.mdc should be loaded because the project's primary_language is 'python', which satisfies the condition 'when primary_language is python and not unknown'. The triggers in the manifest correctly evaluate to true for the project context, making this language-specific rule applicable.\",\n  \"confidence\": 95,\n  \"clarification_needed\": false\n}"
+  },
+  {
+    "scenario_id": "scenario_19",
+    "format_type": "enhanced",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:51:56.367789",
+    "selected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "correct_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 95,
+    "reasoning": "All three rule files should be loaded based on the project context and manifest conditions. Level 1 core rules are always loaded as they are fundamental to all projects. Level 2 architecture rules are also always loaded as they apply to all projects. Level 3 project-type-specific rules should be loaded because the project context specifies project_type as 'cli', which satisfies the condition 'when project_type is 'cli' and not 'unknown'' - the project is not 'unknown' and is specifically 'cli', meeting the trigger conditions for loading.",
+    "clarification_needed": false,
+    "decision_time": 1.312284231185913,
+    "raw_response": "{\n  \"selected_files\": [\"level1-core.mdc\", \"level2-architecture.mdc\", \"level3-project-type.mdc\"],\n  \"reasoning\": \"All three rule files should be loaded based on the project context and manifest conditions. Level 1 core rules are always loaded as they are fundamental to all projects. Level 2 architecture rules are also always loaded as they apply to all projects. Level 3 project-type-specific rules should be loaded because the project context specifies project_type as 'cli', which satisfies the condition 'when project_type is 'cli' and not 'unknown'' - the project is not 'unknown' and is specifically 'cli', meeting the trigger conditions for loading.\",\n  \"confidence\": 95,\n  \"clarification_needed\": false\n}"
+  },
+  {
+    "scenario_id": "scenario_20",
+    "format_type": "enhanced",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:52:00.168353",
+    "selected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc"
+    ],
+    "correct_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 95,
+    "reasoning": "Both rule files should be loaded because they are marked as 'required: true' and 'always_load: true' in their respective conditions. The manifest shows a progressive loading hierarchy where Level 1 rules (core) are loaded first, followed by Level 2 rules (architecture). Since there are no context-specific requirements or triggers that would prevent these files from loading, and both are fundamental to project rules, they should both be loaded regardless of the unknown project context.",
+    "clarification_needed": false,
+    "decision_time": 3.798859119415283,
+    "raw_response": "{\n  \"selected_files\": [\"level1-core.mdc\", \"level2-architecture.mdc\"],\n  \"reasoning\": \"Both rule files should be loaded because they are marked as 'required: true' and 'always_load: true' in their respective conditions. The manifest shows a progressive loading hierarchy where Level 1 rules (core) are loaded first, followed by Level 2 rules (architecture). Since there are no context-specific requirements or triggers that would prevent these files from loading, and both are fundamental to project rules, they should both be loaded regardless of the unknown project context.\",\n  \"confidence\": 95,\n  \"clarification_needed\": false\n}"
+  }
+]

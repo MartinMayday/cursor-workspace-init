@@ -1,0 +1,22 @@
+{
+  "rules": [
+    {
+      "level": 1,
+      "file": "level1-core.mdc",
+      "description": "Core rules and principles",
+      "required": true
+    },
+    {
+      "level": 2,
+      "file": "level2-architecture.mdc",
+      "description": "Architecture and design patterns",
+      "required": true
+    },
+    {
+      "level": 4,
+      "file": "level4-language.mdc",
+      "description": "Language-specific rules",
+      "required": false
+    }
+  ]
+}

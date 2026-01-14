@@ -1,0 +1,612 @@
+[
+  {
+    "scenario_id": "scenario_01",
+    "format_type": "baseline",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:49:34.725355",
+    "selected_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc",
+      "level4-language.mdc"
+    ],
+    "correct_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 95,
+    "reasoning": "All four rule files should be loaded because: 1) The first two files (level1-core.mdc and level2-architecture.mdc) are marked as required and contain fundamental rules that apply to all projects regardless of type or language. 2) The third file (level3-project-type.mdc) is not required but relevant since the project is a CLI tool, which is a specific project type that would benefit from type-specific rules. 3) The fourth file (level4-language.mdc) is not required but relevant since the project uses Python, which would benefit from language-specific rules. While some files are marked as 'not required', they provide valuable context and best practices that enhance the overall rule set for this specific project configuration.",
+    "clarification_needed": false,
+    "decision_time": 7.2379539012908936,
+    "raw_response": "{\n  \"selected_files\": [\"level1-core.mdc\", \"level2-architecture.mdc\", \"level3-project-type.mdc\", \"level4-language.mdc\"],\n  \"reasoning\": \"All four rule files should be loaded because: 1) The first two files (level1-core.mdc and level2-architecture.mdc) are marked as required and contain fundamental rules that apply to all projects regardless of type or language. 2) The third file (level3-project-type.mdc) is not required but relevant since the project is a CLI tool, which is a specific project type that would benefit from type-specific rules. 3) The fourth file (level4-language.mdc) is not required but relevant since the project uses Python, which would benefit from language-specific rules. While some files are marked as 'not required', they provide valuable context and best practices that enhance the overall rule set for this specific project configuration.\",\n  \"confidence\": 95,\n  \"clarification_needed\": false\n}"
+  },
+  {
+    "scenario_id": "scenario_02",
+    "format_type": "baseline",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:49:36.208166",
+    "selected_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc",
+      "level4-language.mdc"
+    ],
+    "correct_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 95,
+    "reasoning": "All four rule files should be loaded based on the manifest configuration. The manifest defines level 1 and 2 rules as 'required' which must be loaded. While level 3 (project type-specific) and level 4 (language-specific) rules are marked as 'optional', they should still be loaded given the project context. The project is a web application using JavaScript with MVC architecture, which directly aligns with the project type and language rules. The 'required' flag in the manifest indicates mandatory rules, but the optional rules are still relevant for comprehensive project compliance. Since the project has specific characteristics (web, JavaScript, MVC), all rule files provide valuable guidance for proper development practices.",
+    "clarification_needed": false,
+    "decision_time": 1.4813051223754883,
+    "raw_response": "{\n  \"selected_files\": [\"level1-core.mdc\", \"level2-architecture.mdc\", \"level3-project-type.mdc\", \"level4-language.mdc\"],\n  \"reasoning\": \"All four rule files should be loaded based on the manifest configuration. The manifest defines level 1 and 2 rules as 'required' which must be loaded. While level 3 (project type-specific) and level 4 (language-specific) rules are marked as 'optional', they should still be loaded given the project context. The project is a web application using JavaScript with MVC architecture, which directly aligns with the project type and language rules. The 'required' flag in the manifest indicates mandatory rules, but the optional rules are still relevant for comprehensive project compliance. Since the project has specific characteristics (web, JavaScript, MVC), all rule files provide valuable guidance for proper development practices.\",\n  \"confidence\": 95,\n  \"clarification_needed\": false\n}"
+  },
+  {
+    "scenario_id": "scenario_03",
+    "format_type": "baseline",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:49:37.573676",
+    "selected_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc",
+      "level4-language.mdc"
+    ],
+    "correct_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 95,
+    "reasoning": "All four rule files should be loaded because: 1) The first two files (level1-core.mdc and level2-architecture.mdc) are marked as required and contain fundamental rules that apply to all projects regardless of type or language. 2) The third file (level3-project-type.mdc) is not required but relevant for a library project, as project type-specific rules often provide important guidelines for library development. 3) The fourth file (level4-language.mdc) is not required but essential for a Go project, as language-specific rules are crucial for maintaining code quality and following Go conventions. Since this is a Go library project with modular architecture, all rule sets provide valuable guidance.",
+    "clarification_needed": false,
+    "decision_time": 1.364570140838623,
+    "raw_response": "{\n  \"selected_files\": [\"level1-core.mdc\", \"level2-architecture.mdc\", \"level3-project-type.mdc\", \"level4-language.mdc\"],\n  \"reasoning\": \"All four rule files should be loaded because: 1) The first two files (level1-core.mdc and level2-architecture.mdc) are marked as required and contain fundamental rules that apply to all projects regardless of type or language. 2) The third file (level3-project-type.mdc) is not required but relevant for a library project, as project type-specific rules often provide important guidelines for library development. 3) The fourth file (level4-language.mdc) is not required but essential for a Go project, as language-specific rules are crucial for maintaining code quality and following Go conventions. Since this is a Go library project with modular architecture, all rule sets provide valuable guidance.\",\n  \"confidence\": 95,\n  \"clarification_needed\": false\n}"
+  },
+  {
+    "scenario_id": "scenario_04",
+    "format_type": "baseline",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:49:40.838437",
+    "selected_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc",
+      "level4-language.mdc"
+    ],
+    "correct_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 95,
+    "reasoning": "All four rule files should be loaded because: 1) The first two files (level1-core.mdc and level2-architecture.mdc) are marked as required and contain fundamental rules that apply to all projects regardless of specific characteristics; 2) The project context shows this is an API server project with layered architecture, so the project-type-specific rules (level3-project-type.mdc) and language-specific rules (level4-language.mdc) are relevant and should be applied; 3) The project uses TypeScript as the primary language, making the language-specific rules applicable; 4) The layered architecture aligns with typical API server design patterns that would be covered in the architecture rules; 5) There are no conflicting requirements or exclusions indicated in the project context that would prevent loading any of these files.",
+    "clarification_needed": false,
+    "decision_time": 3.262310266494751,
+    "raw_response": "{\n  \"selected_files\": [\"level1-core.mdc\", \"level2-architecture.mdc\", \"level3-project-type.mdc\", \"level4-language.mdc\"],\n  \"reasoning\": \"All four rule files should be loaded because: 1) The first two files (level1-core.mdc and level2-architecture.mdc) are marked as required and contain fundamental rules that apply to all projects regardless of specific characteristics; 2) The project context shows this is an API server project with layered architecture, so the project-type-specific rules (level3-project-type.mdc) and language-specific rules (level4-language.mdc) are relevant and should be applied; 3) The project uses TypeScript as the primary language, making the language-specific rules applicable; 4) The layered architecture aligns with typical API server design patterns that would be covered in the architecture rules; 5) There are no conflicting requirements or exclusions indicated in the project context that would prevent loading any of these files.\",\n  \"confidence\": 95,\n  \"clarification_needed\": false\n}"
+  },
+  {
+    "scenario_id": "scenario_05",
+    "format_type": "baseline",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:49:43.622790",
+    "selected_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc",
+      "level4-language.mdc"
+    ],
+    "correct_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 95,
+    "reasoning": "All four rule files should be loaded because: 1) The first two files (level1-core.mdc and level2-architecture.mdc) are marked as required and contain fundamental rules that apply to all projects regardless of type or language. 2) The third file (level3-project-type.mdc) is not required but relevant since the project is a CLI application, which would fall under project type-specific rules. 3) The fourth file (level4-language.mdc) is not required but relevant since the project uses Rust as its primary language, which would have language-specific rules. Since the project context provides all necessary information to evaluate these rules and none of the files are marked as conditionally required, all files should be loaded.",
+    "clarification_needed": false,
+    "decision_time": 2.7822139263153076,
+    "raw_response": "{\n  \"selected_files\": [\"level1-core.mdc\", \"level2-architecture.mdc\", \"level3-project-type.mdc\", \"level4-language.mdc\"],\n  \"reasoning\": \"All four rule files should be loaded because: 1) The first two files (level1-core.mdc and level2-architecture.mdc) are marked as required and contain fundamental rules that apply to all projects regardless of type or language. 2) The third file (level3-project-type.mdc) is not required but relevant since the project is a CLI application, which would fall under project type-specific rules. 3) The fourth file (level4-language.mdc) is not required but relevant since the project uses Rust as its primary language, which would have language-specific rules. Since the project context provides all necessary information to evaluate these rules and none of the files are marked as conditionally required, all files should be loaded.\",\n  \"confidence\": 95,\n  \"clarification_needed\": false\n}"
+  },
+  {
+    "scenario_id": "scenario_06",
+    "format_type": "baseline",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:49:46.645763",
+    "selected_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc",
+      "level4-language.mdc"
+    ],
+    "correct_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 95,
+    "reasoning": "All four rule files should be loaded because: 1) The first two files (level1-core.mdc and level2-architecture.mdc) are marked as required and contain fundamental rules and architecture principles that apply to all projects regardless of type or language. 2) The third file (level3-project-type.mdc) is relevant because the project is a web application using Django framework, which falls under web project type. 3) The fourth file (level4-language.mdc) is relevant because Python is the primary language used in this Django project. Since all files are either required or highly relevant to the project context, all should be loaded.",
+    "clarification_needed": false,
+    "decision_time": 3.021899938583374,
+    "raw_response": "{\n  \"selected_files\": [\"level1-core.mdc\", \"level2-architecture.mdc\", \"level3-project-type.mdc\", \"level4-language.mdc\"],\n  \"reasoning\": \"All four rule files should be loaded because: 1) The first two files (level1-core.mdc and level2-architecture.mdc) are marked as required and contain fundamental rules and architecture principles that apply to all projects regardless of type or language. 2) The third file (level3-project-type.mdc) is relevant because the project is a web application using Django framework, which falls under web project type. 3) The fourth file (level4-language.mdc) is relevant because Python is the primary language used in this Django project. Since all files are either required or highly relevant to the project context, all should be loaded.\",\n  \"confidence\": 95,\n  \"clarification_needed\": false\n}"
+  },
+  {
+    "scenario_id": "scenario_07",
+    "format_type": "baseline",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:49:48.083592",
+    "selected_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc",
+      "level4-language.mdc"
+    ],
+    "correct_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 95,
+    "reasoning": "All four rule files should be loaded because: 1) The first two files (level1-core.mdc and level2-architecture.mdc) are marked as required and contain fundamental rules that apply to all projects regardless of type or language. 2) The third file (level3-project-type.mdc) is relevant because the project is an API project, which requires project-type specific rules. 3) The fourth file (level4-language.mdc) is relevant because the project uses JavaScript as its primary language, which requires language-specific rules. Since all files are either required or highly relevant to this specific project context, all should be loaded.",
+    "clarification_needed": false,
+    "decision_time": 1.4367611408233643,
+    "raw_response": "{\n  \"selected_files\": [\"level1-core.mdc\", \"level2-architecture.mdc\", \"level3-project-type.mdc\", \"level4-language.mdc\"],\n  \"reasoning\": \"All four rule files should be loaded because: 1) The first two files (level1-core.mdc and level2-architecture.mdc) are marked as required and contain fundamental rules that apply to all projects regardless of type or language. 2) The third file (level3-project-type.mdc) is relevant because the project is an API project, which requires project-type specific rules. 3) The fourth file (level4-language.mdc) is relevant because the project uses JavaScript as its primary language, which requires language-specific rules. Since all files are either required or highly relevant to this specific project context, all should be loaded.\",\n  \"confidence\": 95,\n  \"clarification_needed\": false\n}"
+  },
+  {
+    "scenario_id": "scenario_08",
+    "format_type": "baseline",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:49:54.313676",
+    "selected_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc",
+      "level4-language.mdc"
+    ],
+    "correct_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 95,
+    "reasoning": "All four rule files should be loaded because: 1) The first two files (level1-core.mdc and level2-architecture.mdc) are marked as required and contain fundamental rules that apply to all projects regardless of specific characteristics; 2) The third file (level3-project-type.mdc) is not required but relevant to this web project with React framework; 3) The fourth file (level4-language.mdc) is not required but relevant to this TypeScript project. Since this is a baseline manifest with no conditional logic or project-specific overrides, and all files are either required or relevant to the project context, all should be loaded.",
+    "clarification_needed": false,
+    "decision_time": 6.228134870529175,
+    "raw_response": "{\n  \"selected_files\": [\"level1-core.mdc\", \"level2-architecture.mdc\", \"level3-project-type.mdc\", \"level4-language.mdc\"],\n  \"reasoning\": \"All four rule files should be loaded because: 1) The first two files (level1-core.mdc and level2-architecture.mdc) are marked as required and contain fundamental rules that apply to all projects regardless of specific characteristics; 2) The third file (level3-project-type.mdc) is not required but relevant to this web project with React framework; 3) The fourth file (level4-language.mdc) is not required but relevant to this TypeScript project. Since this is a baseline manifest with no conditional logic or project-specific overrides, and all files are either required or relevant to the project context, all should be loaded.\",\n  \"confidence\": 95,\n  \"clarification_needed\": false\n}"
+  },
+  {
+    "scenario_id": "scenario_09",
+    "format_type": "baseline",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:50:00.325548",
+    "selected_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc",
+      "level4-language.mdc"
+    ],
+    "correct_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 95,
+    "reasoning": "All four rule files should be loaded based on the project context. The project is a Go-based API service with microservices architecture running in Docker containers. The core rules (level 1) are always required. The architecture rules (level 2) are needed for the microservices design. The project type rules (level 3) are relevant for an API service. The language rules (level 4) are essential since this is a Go project with gofmt coding standards. All rules are marked as required in the manifest, so there's no exclusion based on requirement status.",
+    "clarification_needed": false,
+    "decision_time": 6.010592937469482,
+    "raw_response": "{\n  \"selected_files\": [\"level1-core.mdc\", \"level2-architecture.mdc\", \"level3-project-type.mdc\", \"level4-language.mdc\"],\n  \"reasoning\": \"All four rule files should be loaded based on the project context. The project is a Go-based API service with microservices architecture running in Docker containers. The core rules (level 1) are always required. The architecture rules (level 2) are needed for the microservices design. The project type rules (level 3) are relevant for an API service. The language rules (level 4) are essential since this is a Go project with gofmt coding standards. All rules are marked as required in the manifest, so there's no exclusion based on requirement status.\",\n  \"confidence\": 95,\n  \"clarification_needed\": false\n}"
+  },
+  {
+    "scenario_id": "scenario_10",
+    "format_type": "baseline",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:50:01.886929",
+    "selected_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc",
+      "level4-language.mdc"
+    ],
+    "correct_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 95,
+    "reasoning": "All four rule files should be loaded because: 1) level1-core.mdc is required by definition and contains core rules and principles that apply to all projects, 2) level2-architecture.mdc is required and covers architecture and design patterns which are essential for a microservices architecture, 3) level3-project-type.mdc is relevant for this API project type and will provide project-specific guidelines, and 4) level4-language.mdc is relevant for this Python project with FastAPI framework and will provide language-specific rules. The project context confirms this is a Python-based API project using FastAPI framework with microservices architecture, making all rule files applicable.",
+    "clarification_needed": false,
+    "decision_time": 1.5603699684143066,
+    "raw_response": "{\n  \"selected_files\": [\"level1-core.mdc\", \"level2-architecture.mdc\", \"level3-project-type.mdc\", \"level4-language.mdc\"],\n  \"reasoning\": \"All four rule files should be loaded because: 1) level1-core.mdc is required by definition and contains core rules and principles that apply to all projects, 2) level2-architecture.mdc is required and covers architecture and design patterns which are essential for a microservices architecture, 3) level3-project-type.mdc is relevant for this API project type and will provide project-specific guidelines, and 4) level4-language.mdc is relevant for this Python project with FastAPI framework and will provide language-specific rules. The project context confirms this is a Python-based API project using FastAPI framework with microservices architecture, making all rule files applicable.\",\n  \"confidence\": 95,\n  \"clarification_needed\": false\n}"
+  },
+  {
+    "scenario_id": "scenario_11",
+    "format_type": "baseline",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:50:04.532355",
+    "selected_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc",
+      "level4-language.mdc"
+    ],
+    "correct_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 95,
+    "reasoning": "All four rule files should be loaded because the project context matches the requirements for each level. Level 1 (core rules) is always required. Level 2 (architecture) is required and the project uses MVC architecture. Level 3 (project type) is optional but relevant as this is a web project. Level 4 (language) is optional but relevant as this is a TypeScript project. Since the project is a Vue.js web application with TypeScript, all rule files provide applicable guidance and none are excluded based on the project context.",
+    "clarification_needed": false,
+    "decision_time": 2.6444709300994873,
+    "raw_response": "{\n  \"selected_files\": [\"level1-core.mdc\", \"level2-architecture.mdc\", \"level3-project-type.mdc\", \"level4-language.mdc\"],\n  \"reasoning\": \"All four rule files should be loaded because the project context matches the requirements for each level. Level 1 (core rules) is always required. Level 2 (architecture) is required and the project uses MVC architecture. Level 3 (project type) is optional but relevant as this is a web project. Level 4 (language) is optional but relevant as this is a TypeScript project. Since the project is a Vue.js web application with TypeScript, all rule files provide applicable guidance and none are excluded based on the project context.\",\n  \"confidence\": 95,\n  \"clarification_needed\": false\n}"
+  },
+  {
+    "scenario_id": "scenario_12",
+    "format_type": "baseline",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:50:06.752765",
+    "selected_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc",
+      "level4-language.mdc"
+    ],
+    "correct_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 95,
+    "reasoning": "All four rule files should be loaded because: 1) The first two files (level1-core.mdc and level2-architecture.mdc) are marked as required and contain fundamental rules and architecture principles that apply to all projects; 2) The third file (level3-project-type.mdc) is relevant as this is a web project with Next.js framework, making project-type-specific rules applicable; 3) The fourth file (level4-language.mdc) is relevant since the primary language is TypeScript, which requires language-specific rules. Since all files are either required or highly relevant to this specific project context, all should be loaded.",
+    "clarification_needed": false,
+    "decision_time": 2.2189037799835205,
+    "raw_response": "{\n  \"selected_files\": [\"level1-core.mdc\", \"level2-architecture.mdc\", \"level3-project-type.mdc\", \"level4-language.mdc\"],\n  \"reasoning\": \"All four rule files should be loaded because: 1) The first two files (level1-core.mdc and level2-architecture.mdc) are marked as required and contain fundamental rules and architecture principles that apply to all projects; 2) The third file (level3-project-type.mdc) is relevant as this is a web project with Next.js framework, making project-type-specific rules applicable; 3) The fourth file (level4-language.mdc) is relevant since the primary language is TypeScript, which requires language-specific rules. Since all files are either required or highly relevant to this specific project context, all should be loaded.\",\n  \"confidence\": 95,\n  \"clarification_needed\": false\n}"
+  },
+  {
+    "scenario_id": "scenario_13",
+    "format_type": "baseline",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:50:12.455691",
+    "selected_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level4-language.mdc"
+    ],
+    "correct_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 95,
+    "reasoning": "All three rule files should be loaded based on the manifest configuration. The manifest specifies that level 1 and level 2 rules are required, and level 4 rules are optional but available. Since the project context doesn't indicate any specific constraints or requirements that would exclude any of these rule sets, and the project is using Python with PEP8 standards, all three rule files are relevant. The core rules (level 1) provide fundamental principles, architecture rules (level 2) cover design patterns, and language rules (level 4) address Python-specific conventions. The optional nature of level 4 doesn't prevent loading it when the project is Python-based.",
+    "clarification_needed": false,
+    "decision_time": 5.701304912567139,
+    "raw_response": "{\n  \"selected_files\": [\"level1-core.mdc\", \"level2-architecture.mdc\", \"level4-language.mdc\"],\n  \"reasoning\": \"All three rule files should be loaded based on the manifest configuration. The manifest specifies that level 1 and level 2 rules are required, and level 4 rules are optional but available. Since the project context doesn't indicate any specific constraints or requirements that would exclude any of these rule sets, and the project is using Python with PEP8 standards, all three rule files are relevant. The core rules (level 1) provide fundamental principles, architecture rules (level 2) cover design patterns, and language rules (level 4) address Python-specific conventions. The optional nature of level 4 doesn't prevent loading it when the project is Python-based.\",\n  \"confidence\": 95,\n  \"clarification_needed\": false\n}"
+  },
+  {
+    "scenario_id": "scenario_14",
+    "format_type": "baseline",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:50:16.967073",
+    "selected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "correct_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 95,
+    "reasoning": "All three rule files should be loaded based on the manifest configuration. The first two files (level1-core.mdc and level2-architecture.mdc) are marked as required, so they must be loaded regardless of project context. The third file (level3-project-type.mdc) is optional but since there's no specific indication that this project type should exclude it, and it's a project type-specific rule that could provide valuable guidance for a CLI project, it should also be loaded. The project context shows a 'cli' project type with 'modular' architecture, which aligns well with the rule files that cover core principles, architecture patterns, and project type considerations.",
+    "clarification_needed": false,
+    "decision_time": 4.510380983352661,
+    "raw_response": "{\n  \"selected_files\": [\"level1-core.mdc\", \"level2-architecture.mdc\", \"level3-project-type.mdc\"],\n  \"reasoning\": \"All three rule files should be loaded based on the manifest configuration. The first two files (level1-core.mdc and level2-architecture.mdc) are marked as required, so they must be loaded regardless of project context. The third file (level3-project-type.mdc) is optional but since there's no specific indication that this project type should exclude it, and it's a project type-specific rule that could provide valuable guidance for a CLI project, it should also be loaded. The project context shows a 'cli' project type with 'modular' architecture, which aligns well with the rule files that cover core principles, architecture patterns, and project type considerations.\",\n  \"confidence\": 95,\n  \"clarification_needed\": false\n}"
+  },
+  {
+    "scenario_id": "scenario_15",
+    "format_type": "baseline",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:50:18.640727",
+    "selected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "correct_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 90,
+    "reasoning": "All three rule files should be loaded because the manifest indicates that level 1 and level 2 files are required, and the level 3 file is optional but the project context doesn't provide enough information to determine if it should be skipped. Since the project context is minimal (only project_name and project_type are provided), we cannot make an informed decision about excluding the project-type-specific rules. The core and architecture rules are fundamental and should always be applied regardless of the limited context provided.",
+    "clarification_needed": false,
+    "decision_time": 1.6714410781860352,
+    "raw_response": "{\n  \"selected_files\": [\"level1-core.mdc\", \"level2-architecture.mdc\", \"level3-project-type.mdc\"],\n  \"reasoning\": \"All three rule files should be loaded because the manifest indicates that level 1 and level 2 files are required, and the level 3 file is optional but the project context doesn't provide enough information to determine if it should be skipped. Since the project context is minimal (only project_name and project_type are provided), we cannot make an informed decision about excluding the project-type-specific rules. The core and architecture rules are fundamental and should always be applied regardless of the limited context provided.\",\n  \"confidence\": 90,\n  \"clarification_needed\": false\n}"
+  },
+  {
+    "scenario_id": "scenario_16",
+    "format_type": "baseline",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:50:20.778990",
+    "selected_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level4-language.mdc"
+    ],
+    "correct_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 95,
+    "reasoning": "All three files should be loaded based on the manifest configuration. The manifest defines three rules files with levels 1, 2, and 4. Level 1 and 2 files are marked as 'required: true', which means they must be loaded regardless of project context. The level 4 file is marked as 'required: false', but since there's no specific project context that would exclude it (such as a non-JavaScript project), and the project is explicitly set to 'javascript' as the primary language, the language-specific rules should also be loaded. The project context doesn't provide any conflicting information that would prevent loading any of these files.",
+    "clarification_needed": false,
+    "decision_time": 2.1363790035247803,
+    "raw_response": "{\n  \"selected_files\": [\"level1-core.mdc\", \"level2-architecture.mdc\", \"level4-language.mdc\"],\n  \"reasoning\": \"All three files should be loaded based on the manifest configuration. The manifest defines three rules files with levels 1, 2, and 4. Level 1 and 2 files are marked as 'required: true', which means they must be loaded regardless of project context. The level 4 file is marked as 'required: false', but since there's no specific project context that would exclude it (such as a non-JavaScript project), and the project is explicitly set to 'javascript' as the primary language, the language-specific rules should also be loaded. The project context doesn't provide any conflicting information that would prevent loading any of these files.\",\n  \"confidence\": 95,\n  \"clarification_needed\": false\n}"
+  },
+  {
+    "scenario_id": "scenario_17",
+    "format_type": "baseline",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:50:22.277322",
+    "selected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc"
+    ],
+    "correct_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 95,
+    "reasoning": "Both rule files are marked as required in the manifest, and there is no project context provided that would indicate a need to exclude either file. The minimal project context doesn't specify any particular constraints or requirements that would make one set of rules more or less applicable than the other. Since both files are required and no overriding project-specific conditions are present, both should be loaded to ensure compliance with the baseline requirements.",
+    "clarification_needed": false,
+    "decision_time": 1.4925620555877686,
+    "raw_response": "{\n  \"selected_files\": [\"level1-core.mdc\", \"level2-architecture.mdc\"],\n  \"reasoning\": \"Both rule files are marked as required in the manifest, and there is no project context provided that would indicate a need to exclude either file. The minimal project context doesn't specify any particular constraints or requirements that would make one set of rules more or less applicable than the other. Since both files are required and no overriding project-specific conditions are present, both should be loaded to ensure compliance with the baseline requirements.\",\n  \"confidence\": 95,\n  \"clarification_needed\": false\n}"
+  },
+  {
+    "scenario_id": "scenario_18",
+    "format_type": "baseline",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:50:26.884466",
+    "selected_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level4-language.mdc"
+    ],
+    "correct_files": [
+      "level4-language.mdc",
+      "level1-core.mdc",
+      "level2-architecture.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 95,
+    "reasoning": "All three rule files should be loaded based on the manifest configuration. The manifest specifies that level 1 and level 2 rules are required, and level 4 rules are optional but available. Since the project context doesn't indicate any restrictions or conflicts that would prevent loading the level 4 rules, and there's no indication that the project is in a restricted environment or has special requirements that would override the baseline configuration, all files should be loaded. The project's Python language focus aligns with the language-specific rules in level 4, and the modular architecture supports the architectural rules in level 2.",
+    "clarification_needed": false,
+    "decision_time": 4.602813959121704,
+    "raw_response": "{\n  \"selected_files\": [\"level1-core.mdc\", \"level2-architecture.mdc\", \"level4-language.mdc\"],\n  \"reasoning\": \"All three rule files should be loaded based on the manifest configuration. The manifest specifies that level 1 and level 2 rules are required, and level 4 rules are optional but available. Since the project context doesn't indicate any restrictions or conflicts that would prevent loading the level 4 rules, and there's no indication that the project is in a restricted environment or has special requirements that would override the baseline configuration, all files should be loaded. The project's Python language focus aligns with the language-specific rules in level 4, and the modular architecture supports the architectural rules in level 2.\",\n  \"confidence\": 95,\n  \"clarification_needed\": false\n}"
+  },
+  {
+    "scenario_id": "scenario_19",
+    "format_type": "baseline",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:50:31.433321",
+    "selected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "correct_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc",
+      "level3-project-type.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 95,
+    "reasoning": "All three rule files should be loaded based on the manifest configuration. The first two files (level1-core.mdc and level2-architecture.mdc) are marked as required=true, so they must be loaded regardless of project context. The third file (level3-project-type.mdc) is marked as required=false, but since the project context indicates a 'cli' project type, it would be appropriate to load this file to apply project-type-specific rules. The modular architecture aligns well with CLI project structures, and the unknown language doesn't prevent applying project-type rules.",
+    "clarification_needed": false,
+    "decision_time": 4.547122955322266,
+    "raw_response": "{\n  \"selected_files\": [\"level1-core.mdc\", \"level2-architecture.mdc\", \"level3-project-type.mdc\"],\n  \"reasoning\": \"All three rule files should be loaded based on the manifest configuration. The first two files (level1-core.mdc and level2-architecture.mdc) are marked as required=true, so they must be loaded regardless of project context. The third file (level3-project-type.mdc) is marked as required=false, but since the project context indicates a 'cli' project type, it would be appropriate to load this file to apply project-type-specific rules. The modular architecture aligns well with CLI project structures, and the unknown language doesn't prevent applying project-type rules.\",\n  \"confidence\": 95,\n  \"clarification_needed\": false\n}"
+  },
+  {
+    "scenario_id": "scenario_20",
+    "format_type": "baseline",
+    "run_number": 1,
+    "timestamp": "2025-12-27T23:50:32.664174",
+    "selected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc"
+    ],
+    "expected_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc"
+    ],
+    "correct_files": [
+      "level1-core.mdc",
+      "level2-architecture.mdc"
+    ],
+    "incorrect_files": [],
+    "missing_files": [],
+    "accuracy": 100.0,
+    "confidence": 95,
+    "reasoning": "Both rule files are marked as required in the manifest, and there is no project context provided that would indicate these rules should be excluded. The project context shows 'unknown' for all fields, which means we cannot determine any specific requirements that would override the baseline rules. Since both files are required and no exclusion criteria are provided, both should be loaded to ensure compliance with the baseline requirements.",
+    "clarification_needed": false,
+    "decision_time": 1.2296528816223145,
+    "raw_response": "{\n  \"selected_files\": [\"level1-core.mdc\", \"level2-architecture.mdc\"],\n  \"reasoning\": \"Both rule files are marked as required in the manifest, and there is no project context provided that would indicate these rules should be excluded. The project context shows 'unknown' for all fields, which means we cannot determine any specific requirements that would override the baseline rules. Since both files are required and no exclusion criteria are provided, both should be loaded to ensure compliance with the baseline requirements.\",\n  \"confidence\": 95,\n  \"clarification_needed\": false\n}"
+  }
+]

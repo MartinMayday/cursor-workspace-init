@@ -1,0 +1,149 @@
+# Framework-Specific Rules and Best Practices
+
+fastapi:
+  best_practices:
+    - "Use Pydantic models for request/response validation"
+    - "Use dependency injection for shared logic"
+    - "Use async/await for I/O operations"
+    - "Use APIRouter for route organization"
+    - "Use proper HTTP status codes"
+    - "Use background tasks for long-running operations"
+    - "Use middleware for cross-cutting concerns"
+  
+  patterns:
+    - "Organize routes by domain/resource"
+    - "Use dependency injection for database sessions"
+    - "Use Pydantic schemas for validation"
+    - "Use async database operations"
+  
+  anti_patterns:
+    - "Don't use synchronous I/O in route handlers"
+    - "Don't skip input validation"
+    - "Don't expose internal errors to clients"
+    - "Don't use global state"
+
+django:
+  best_practices:
+    - "Follow Django project structure conventions"
+    - "Use Django ORM appropriately"
+    - "Use class-based views when appropriate"
+    - "Use Django forms for validation"
+    - "Use Django middleware appropriately"
+    - "Follow Django security best practices"
+    - "Use migrations for schema changes"
+  
+  patterns:
+    - "Organize apps by domain"
+    - "Use Django signals sparingly"
+    - "Use select_related and prefetch_related for queries"
+    - "Use Django admin for data management"
+  
+  anti_patterns:
+    - "Don't use raw SQL unnecessarily"
+    - "Don't bypass Django ORM"
+    - "Don't put business logic in views"
+    - "Don't ignore migrations"
+
+flask:
+  best_practices:
+    - "Use Flask blueprints for organization"
+    - "Use Flask extensions appropriately"
+    - "Use Flask-WTF for form handling"
+    - "Use Flask-SQLAlchemy for database"
+    - "Follow Flask security best practices"
+    - "Use application factory pattern"
+  
+  patterns:
+    - "Organize routes by blueprint"
+    - "Use Flask config for configuration"
+    - "Use Flask CLI for commands"
+  
+  anti_patterns:
+    - "Don't put all routes in one file"
+    - "Don't use global app instance"
+    - "Don't hardcode configuration"
+
+react:
+  best_practices:
+    - "Use functional components with hooks"
+    - "Use custom hooks for reusable logic"
+    - "Use proper state management"
+    - "Use React.memo for performance"
+    - "Use proper key props in lists"
+    - "Follow React component patterns"
+  
+  patterns:
+    - "Organize components by feature"
+    - "Use context for shared state"
+    - "Use composition over inheritance"
+    - "Use proper prop types or TypeScript"
+  
+  anti_patterns:
+    - "Don't mutate state directly"
+    - "Don't use index as key"
+    - "Don't create components in render"
+    - "Don't use class components unnecessarily"
+
+nextjs:
+  best_practices:
+    - "Use Next.js routing conventions"
+    - "Use appropriate rendering strategy (SSR, SSG, ISR)"
+    - "Use Next.js Image component"
+    - "Use Next.js Link component for navigation"
+    - "Follow Next.js data fetching patterns"
+    - "Use API routes appropriately"
+  
+  patterns:
+    - "Organize pages by route"
+    - "Use getServerSideProps for SSR"
+    - "Use getStaticProps for SSG"
+    - "Use getStaticPaths for dynamic routes"
+  
+  anti_patterns:
+    - "Don't use client-side routing unnecessarily"
+    - "Don't ignore Next.js optimizations"
+    - "Don't use useEffect for data fetching in pages"
+
+express:
+  best_practices:
+    - "Use Express middleware appropriately"
+    - "Use Express router for route organization"
+    - "Use proper error handling middleware"
+    - "Use environment variables for configuration"
+    - "Follow Express security best practices"
+    - "Use async/await for route handlers"
+  
+  patterns:
+    - "Organize routes by resource"
+    - "Use middleware for authentication"
+    - "Use Express validators"
+    - "Use proper status codes"
+  
+  anti_patterns:
+    - "Don't use synchronous operations in routes"
+    - "Don't ignore error handling"
+    - "Don't expose sensitive information"
+    - "Don't use eval() or similar"
+
+nestjs:
+  best_practices:
+    - "Follow NestJS module structure"
+    - "Use dependency injection appropriately"
+    - "Use NestJS decorators properly"
+    - "Use guards for authentication"
+    - "Use interceptors for cross-cutting concerns"
+    - "Use pipes for validation"
+    - "Use NestJS CLI for scaffolding"
+  
+  patterns:
+    - "Organize by feature modules"
+    - "Use DTOs for data transfer"
+    - "Use services for business logic"
+    - "Use controllers for HTTP handling"
+  
+  anti_patterns:
+    - "Don't put business logic in controllers"
+    - "Don't ignore dependency injection"
+    - "Don't use global state"
+
+

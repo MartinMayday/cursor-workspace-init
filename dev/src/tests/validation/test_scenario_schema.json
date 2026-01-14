@@ -1,0 +1,122 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Test Scenario Schema",
+  "description": "Schema for defining test scenarios for manifest format validation",
+  "type": "object",
+  "properties": {
+    "scenario_id": {
+      "type": "string",
+      "description": "Unique identifier for the scenario (e.g., scenario_01)"
+    },
+    "scenario_name": {
+      "type": "string",
+      "description": "Human-readable name for the scenario"
+    },
+    "complexity": {
+      "type": "string",
+      "enum": ["simple", "medium", "complex", "edge_case"],
+      "description": "Complexity level of the scenario"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description of the scenario"
+    },
+    "context": {
+      "type": "object",
+      "description": "Context variables for the scenario",
+      "properties": {
+        "project_name": {
+          "type": "string",
+          "description": "Name of the project"
+        },
+        "project_type": {
+          "type": "string",
+          "description": "Type of project (cli, web, api, library, etc.)",
+          "enum": ["cli", "web", "api", "library", "mobile", "desktop", "unknown", null]
+        },
+        "primary_language": {
+          "type": "string",
+          "description": "Primary programming language",
+          "enum": ["python", "javascript", "typescript", "go", "rust", "java", "cpp", "csharp", "ruby", "php", "unknown", null]
+        },
+        "frameworks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of frameworks used"
+        },
+        "services": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of services/components"
+        },
+        "deployment_type": {
+          "type": "string",
+          "description": "Deployment type (docker, kubernetes, serverless, etc.)",
+          "enum": ["docker", "kubernetes", "serverless", "bare_metal", "cloud", "unknown", null]
+        },
+        "database": {
+          "type": "string",
+          "description": "Database type (postgresql, mysql, mongodb, etc.)",
+          "enum": ["postgresql", "mysql", "mongodb", "redis", "sqlite", "none", "unknown", null]
+        },
+        "architecture": {
+          "type": "string",
+          "description": "Architecture pattern (monolithic, microservices, mvc, etc.)",
+          "enum": ["monolithic", "microservices", "mvc", "layered", "modular", "unknown", null]
+        },
+        "ports": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          },
+          "description": "List of ports used"
+        },
+        "networking": {
+          "type": "object",
+          "description": "Networking configuration",
+          "properties": {
+            "ports": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            },
+            "reverse_proxy": {
+              "type": "boolean"
+            }
+          }
+        },
+        "coding_standards": {
+          "type": "string",
+          "description": "Coding standards (pep8, eslint, gofmt, etc.)"
+        },
+        "testing_framework": {
+          "type": "string",
+          "description": "Testing framework used"
+        }
+      },
+      "required": ["project_name"]
+    },
+    "expected_files": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of expected file names that should be loaded (ground truth)"
+    },
+    "expected_reasoning": {
+      "type": "string",
+      "description": "Expected reasoning for file selection"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes about the scenario"
+    }
+  },
+  "required": ["scenario_id", "scenario_name", "complexity", "description", "context", "expected_files"]
+}
+

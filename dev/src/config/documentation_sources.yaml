@@ -1,0 +1,183 @@
+# Documentation Sources Mapping
+# Maps technologies (languages, frameworks, tools) to their official documentation URLs
+
+languages:
+  python:
+    - type: "documentation"
+      description: "Python Official Documentation"
+      url: "https://docs.python.org/"
+    - type: "documentation"
+      description: "Python PEP Index"
+      url: "https://peps.python.org/"
+    - type: "documentation"
+      description: "Python Package Index (PyPI)"
+      url: "https://pypi.org/"
+  
+  javascript:
+    - type: "documentation"
+      description: "MDN Web Docs - JavaScript"
+      url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+    - type: "documentation"
+      description: "JavaScript.info"
+      url: "https://javascript.info/"
+    - type: "documentation"
+      description: "Node.js Documentation"
+      url: "https://nodejs.org/docs/"
+  
+  typescript:
+    - type: "documentation"
+      description: "TypeScript Official Documentation"
+      url: "https://www.typescriptlang.org/docs/"
+    - type: "documentation"
+      description: "TypeScript Handbook"
+      url: "https://www.typescriptlang.org/docs/handbook/intro.html"
+  
+  go:
+    - type: "documentation"
+      description: "Go Official Documentation"
+      url: "https://go.dev/doc/"
+    - type: "documentation"
+      description: "Go Package Documentation"
+      url: "https://pkg.go.dev/"
+    - type: "documentation"
+      description: "Effective Go"
+      url: "https://go.dev/doc/effective_go"
+  
+  rust:
+    - type: "documentation"
+      description: "The Rust Programming Language Book"
+      url: "https://doc.rust-lang.org/book/"
+    - type: "documentation"
+      description: "Rust Standard Library Documentation"
+      url: "https://doc.rust-lang.org/std/"
+    - type: "documentation"
+      description: "Rust by Example"
+      url: "https://doc.rust-lang.org/rust-by-example/"
+
+frameworks:
+  fastapi:
+    - type: "documentation"
+      description: "FastAPI Official Documentation"
+      url: "https://fastapi.tiangolo.com/"
+    - type: "documentation"
+      description: "FastAPI Tutorial"
+      url: "https://fastapi.tiangolo.com/tutorial/"
+  
+  django:
+    - type: "documentation"
+      description: "Django Official Documentation"
+      url: "https://docs.djangoproject.com/"
+    - type: "documentation"
+      description: "Django Tutorial"
+      url: "https://docs.djangoproject.com/en/stable/intro/tutorial01.html"
+  
+  flask:
+    - type: "documentation"
+      description: "Flask Official Documentation"
+      url: "https://flask.palletsprojects.com/"
+    - type: "documentation"
+      description: "Flask Tutorial"
+      url: "https://flask.palletsprojects.com/tutorial/"
+  
+  react:
+    - type: "documentation"
+      description: "React Official Documentation"
+      url: "https://react.dev/"
+    - type: "documentation"
+      description: "React API Reference"
+      url: "https://react.dev/reference/react"
+  
+  nextjs:
+    - type: "documentation"
+      description: "Next.js Official Documentation"
+      url: "https://nextjs.org/docs"
+    - type: "documentation"
+      description: "Next.js API Reference"
+      url: "https://nextjs.org/docs/api-reference"
+  
+  express:
+    - type: "documentation"
+      description: "Express.js Official Documentation"
+      url: "https://expressjs.com/"
+    - type: "documentation"
+      description: "Express.js API Reference"
+      url: "https://expressjs.com/en/api.html"
+  
+  nestjs:
+    - type: "documentation"
+      description: "NestJS Official Documentation"
+      url: "https://docs.nestjs.com/"
+    - type: "documentation"
+      description: "NestJS Overview"
+      url: "https://docs.nestjs.com/first-steps"
+
+tools:
+  pytest:
+    - type: "documentation"
+      description: "pytest Documentation"
+      url: "https://docs.pytest.org/"
+  
+  jest:
+    - type: "documentation"
+      description: "Jest Documentation"
+      url: "https://jestjs.io/docs/getting-started"
+  
+  vitest:
+    - type: "documentation"
+      description: "Vitest Documentation"
+      url: "https://vitest.dev/guide/"
+  
+  docker:
+    - type: "documentation"
+      description: "Docker Official Documentation"
+      url: "https://docs.docker.com/"
+    - type: "documentation"
+      description: "Docker Compose Documentation"
+      url: "https://docs.docker.com/compose/"
+  
+  kubernetes:
+    - type: "documentation"
+      description: "Kubernetes Official Documentation"
+      url: "https://kubernetes.io/docs/"
+    - type: "documentation"
+      description: "Kubernetes API Reference"
+      url: "https://kubernetes.io/docs/reference/"
+
+databases:
+  postgresql:
+    - type: "documentation"
+      description: "PostgreSQL Official Documentation"
+      url: "https://www.postgresql.org/docs/"
+  
+  mysql:
+    - type: "documentation"
+      description: "MySQL Official Documentation"
+      url: "https://dev.mysql.com/doc/"
+  
+  mongodb:
+    - type: "documentation"
+      description: "MongoDB Official Documentation"
+      url: "https://www.mongodb.com/docs/"
+  
+  redis:
+    - type: "documentation"
+      description: "Redis Official Documentation"
+      url: "https://redis.io/docs/"
+
+cloud_platforms:
+  aws:
+    - type: "documentation"
+      description: "AWS Documentation"
+      url: "https://docs.aws.amazon.com/"
+  
+  azure:
+    - type: "documentation"
+      description: "Azure Documentation"
+      url: "https://docs.microsoft.com/azure/"
+  
+  gcp:
+    - type: "documentation"
+      description: "Google Cloud Documentation"
+      url: "https://cloud.google.com/docs"
+
+

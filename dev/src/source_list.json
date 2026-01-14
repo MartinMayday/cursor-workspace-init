@@ -1,0 +1,34 @@
+{
+  "sources": [
+    {
+      "type": "documentation",
+      "description": "Python Official Documentation",
+      "url": "https://docs.python.org/"
+    },
+    {
+      "type": "documentation",
+      "description": "Python PEP Index",
+      "url": "https://peps.python.org/"
+    },
+    {
+      "type": "documentation",
+      "description": "Python Package Index (PyPI)",
+      "url": "https://pypi.org/"
+    },
+    {
+      "type": "documentation",
+      "description": "MDN Web Docs - JavaScript",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+    },
+    {
+      "type": "documentation",
+      "description": "JavaScript.info",
+      "url": "https://javascript.info/"
+    },
+    {
+      "type": "documentation",
+      "description": "Node.js Documentation",
+      "url": "https://nodejs.org/docs/"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+# Cursor Rules for src
+
+## Project Information
+- Project Name: src
+- Primary Language: python
+- Project Type: cli
+
+## Zero-Assumption Principles
+- Always reference official documentation before making recommendations
+- Cite sources for all architectural decisions
+- Never proceed without documentation backing
+- Extract all variables explicitly - no guessing
+- Never modify original reference files
+
+## Best Practices
+- Use real, network-resolvable hostnames (avoid localhost/127.0.0.1 unless explicitly requested)
+- Follow project coding standards: PEP 8
+- Maintain consistent file organization: standard
+- Write comprehensive tests using: unknown
+
+## Architecture
+- Architecture Pattern: cli
+- Deployment Type: unknown
+- Networking: None
+
+## Technologies
+Python, Javascript
+
+## Services
+None
+
+## Ports
+None
+
+## Database
+None
+

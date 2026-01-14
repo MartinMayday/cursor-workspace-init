@@ -1,0 +1,290 @@
+# Best Practices Configuration for Cursor Workspace Setup
+# This file contains templates, preferences, and configurations for generating workspace files
+
+# User Preferences (from conversation starter)
+preferences:
+  zero_assumption_principles: true
+  reference_official_docs: true
+  cite_sources: true
+  extract_all_variables: true
+  never_modify_originals: true
+  
+  file_organization:
+    generated_artifacts_dir: ".cursor/tmp"
+    fallback_dir: "tmp"
+    keep_repo_root_clean: true
+  
+  networking:
+    use_real_hostnames: true
+    avoid_localhost: true
+  
+  best_practices:
+    interview_driven: true
+    progressive_rule_loading: true
+    single_source_of_truth: true
+    comprehensive_coverage: true
+    multi_tool_support: true  # Cursor, Claude, Windsurf
+
+# Project Type Templates
+project_types:
+  microservices:
+    description: "Microservices architecture with multiple services"
+    default_ports: [8000, 8001, 8002]
+    structure:
+      - services/
+      - shared/
+      - docker-compose.yml
+    best_practices:
+      - "Maintain service independence"
+      - "Use appropriate inter-service communication patterns"
+      - "Implement proper service discovery"
+      - "Use API gateways for external access"
+      - "Implement distributed tracing"
+    patterns:
+      - "Service per domain"
+      - "Database per service"
+      - "Event-driven communication"
+      - "Container-based deployment"
+    
+  monorepo:
+    description: "Monorepo with multiple packages/projects"
+    structure:
+      - packages/
+      - apps/
+      - tools/
+    best_practices:
+      - "Maintain clear package boundaries"
+      - "Use appropriate monorepo tooling"
+      - "Share code through packages"
+      - "Maintain consistent structure"
+    patterns:
+      - "Package-based organization"
+      - "Shared dependencies"
+      - "Workspace configuration"
+    
+  spa:
+    description: "Single Page Application (React, Vue, etc.)"
+    default_ports: [3000, 5173]
+    structure:
+      - src/
+      - public/
+      - package.json
+    best_practices:
+      - "Use client-side routing"
+      - "Implement proper state management"
+      - "Optimize bundle size"
+      - "Use code splitting"
+    patterns:
+      - "Component-based architecture"
+      - "Route-based code splitting"
+      - "API integration patterns"
+    
+  api:
+    description: "API server (FastAPI, Express, etc.)"
+    default_ports: [8000, 3000]
+    structure:
+      - src/
+      - routes/
+      - models/
+    best_practices:
+      - "Follow RESTful design principles"
+      - "Implement proper error handling"
+      - "Use API versioning"
+      - "Implement authentication/authorization"
+    patterns:
+      - "Route-based organization"
+      - "Middleware for cross-cutting concerns"
+      - "Request/response validation"
+    
+  full_stack:
+    description: "Full-stack application"
+    default_ports: [3000, 8000]
+    structure:
+      - frontend/
+      - backend/
+      - shared/
+    best_practices:
+      - "Maintain clear separation between frontend and backend"
+      - "Share types/interfaces between layers"
+      - "Use consistent coding standards"
+      - "Implement proper API contracts"
+    patterns:
+      - "Layered architecture"
+      - "Shared type definitions"
+      - "API-first design"
+    
+  cli:
+    description: "Command-line tool"
+    structure:
+      - src/
+      - commands/
+      - utils/
+    best_practices:
+      - "Follow CLI design best practices"
+      - "Implement proper command structure"
+      - "Provide helpful error messages"
+      - "Use appropriate CLI frameworks"
+    patterns:
+      - "Command-based organization"
+      - "Subcommand patterns"
+      - "Configuration management"
+
+# Language-Specific Rules
+languages:
+  python:
+    frameworks:
+      - fastapi
+      - django
+      - flask
+      - quart
+    testing:
+      - pytest
+      - unittest
+    linting:
+      - ruff
+      - black
+      - flake8
+    formatting:
+      - black
+      - autopep8
+  
+  javascript:
+    frameworks:
+      - react
+      - nextjs
+      - express
+      - vue
+    testing:
+      - jest
+      - vitest
+      - mocha
+    linting:
+      - eslint
+    formatting:
+      - prettier
+  
+  typescript:
+    frameworks:
+      - react
+      - nextjs
+      - express
+      - nestjs
+    testing:
+      - jest
+      - vitest
+    linting:
+      - eslint
+      - tslint
+    formatting:
+      - prettier
+  
+  go:
+    frameworks:
+      - gin
+      - echo
+      - fiber
+    testing:
+      - testing
+      - testify
+    linting:
+      - golangci-lint
+    formatting:
+      - gofmt
+  
+  rust:
+    frameworks:
+      - actix
+      - axum
+      - rocket
+    testing:
+      - cargo test
+    linting:
+      - clippy
+    formatting:
+      - rustfmt
+
+# Framework-Specific Configurations
+frameworks:
+  fastapi:
+    default_port: 8000
+    structure:
+      - app/
+      - routers/
+      - models/
+      - schemas/
+  
+  django:
+    default_port: 8000
+    structure:
+      - manage.py
+      - project_name/
+      - apps/
+  
+  react:
+    default_port: 3000
+    structure:
+      - src/
+      - public/
+      - components/
+  
+  nextjs:
+    default_port: 3000
+    structure:
+      - app/
+      - pages/
+      - components/
+      - public/
+  
+  express:
+    default_port: 3000
+    structure:
+      - src/
+      - routes/
+      - middleware/
+      - models/
+
+# Template Mappings
+template_mappings:
+  .cursorrules: "templates/.cursorrules.template"
+  rules_manifest: "templates/.cursor/rules/rules_manifest.json.template"
+  commands_manifest: "templates/.cursor/commands/commands_manifest.json.template"
+  agents: "templates/.cursor/AGENTS.md.template"
+  source_list: "templates/source_list.json.template"
+
+# Context Variables (to be extracted)
+context_variables:
+  from_existing_repo:
+    - project_name
+    - project_type
+    - primary_language
+    - services
+    - technologies
+    - ports
+    - architecture
+    - deployment_type
+    - networking
+    - database
+    - coding_standards
+    - file_organization
+    - testing_framework
+  
+  from_interview:
+    - project_name
+    - project_type
+    - primary_language
+    - services
+    - technologies
+    - ports
+    - architecture
+    - deployment_type
+    - networking
+    - database
+    - coding_standards
+    - file_organization
+    - testing_framework
+    - examples
+    - confirmations
+
+# Placeholder Format
+placeholder_format: "<PLACEHOLDER: {variable_name}>"
+

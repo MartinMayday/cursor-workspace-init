@@ -1,0 +1,124 @@
+{
+  "manifest_type": "rules",
+  "manifest_version": "1.0",
+  "rules": [
+    {
+      "level": 1,
+      "file": "level1-core.mdc",
+      "path": ".cursor/rules/level1-core.mdc",
+      "category": "rules",
+      "file_type": "rule",
+      "description": "Core rules and principles",
+      "required": true,
+      "load_order": 1,
+      "use_when": "always - these are fundamental rules that apply to all projects",
+      "semantic_meaning": {
+        "level_meaning": "Progressive loading hierarchy - Level 1 is most general, always loaded first",
+        "specificity": "general",
+        "scope": "project-wide",
+        "purpose": "Contains fundamental rules and principles that apply universally to all projects"
+      },
+      "conditions": {
+        "always_load": true,
+        "context_required": [],
+        "triggers": []
+      }
+    },
+    {
+      "level": 2,
+      "file": "level2-architecture.mdc",
+      "path": ".cursor/rules/level2-architecture.mdc",
+      "category": "rules",
+      "file_type": "rule",
+      "description": "Architecture and design patterns",
+      "required": true,
+      "load_order": 2,
+      "use_when": "always - architecture rules apply to all projects",
+      "semantic_meaning": {
+        "level_meaning": "Architecture and design pattern rules, loaded after core rules",
+        "specificity": "architectural",
+        "scope": "project-wide",
+        "purpose": "Contains architecture and design pattern guidelines"
+      },
+      "conditions": {
+        "always_load": true,
+        "context_required": [],
+        "triggers": []
+      }
+    },
+    {
+      "level": 3,
+      "file": "level3-project-type.mdc",
+      "path": ".cursor/rules/level3-project-type.mdc",
+      "category": "rules",
+      "file_type": "rule",
+      "description": "Project type-specific rules",
+      "required": false,
+      "load_order": 3,
+      "use_when": "when project_type is 'cli' and not 'unknown'",
+      "semantic_meaning": {
+        "level_meaning": "Project type-specific rules, loaded after core and architecture rules",
+        "specificity": "project-type-specific",
+        "scope": "applies to cli projects",
+        "purpose": "Contains rules specific to cli project types"
+      },
+      "conditions": {
+        "always_load": false,
+        "context_required": [
+          "project_type"
+        ],
+        "triggers": [
+          {
+            "field": "project_type",
+            "operator": "!=",
+            "value": "unknown",
+            "action": "load"
+          },
+          {
+            "field": "project_type",
+            "operator": "!=",
+            "value": null,
+            "action": "load"
+          }
+        ]
+      }
+    },
+    {
+      "level": 4,
+      "file": "level4-language.mdc",
+      "path": ".cursor/rules/level4-language.mdc",
+      "category": "rules",
+      "file_type": "rule",
+      "description": "Language-specific rules",
+      "required": false,
+      "load_order": 4,
+      "use_when": "when primary_language is 'python' and not 'unknown'",
+      "semantic_meaning": {
+        "level_meaning": "Language-specific rules, loaded after project type rules",
+        "specificity": "language-specific",
+        "scope": "applies to python projects",
+        "purpose": "Contains rules specific to python programming language"
+      },
+      "conditions": {
+        "always_load": false,
+        "context_required": [
+          "primary_language"
+        ],
+        "triggers": [
+          {
+            "field": "primary_language",
+            "operator": "!=",
+            "value": "unknown",
+            "action": "load"
+          },
+          {
+            "field": "primary_language",
+            "operator": "!=",
+            "value": null,
+            "action": "load"
+          }
+        ]
+      }
+    }
+  ]
+}

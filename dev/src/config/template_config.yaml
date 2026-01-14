@@ -1,0 +1,25 @@
+# Template Configuration
+# Configuration for cursor workspace template repository
+
+template_repository:
+  # Default template repository URL
+  url: "https://github.com/MartinMayday/cursor-workspace-templates.git"
+  
+  # Default branch
+  branch: "main"
+  
+  # Cache settings
+  cache:
+    # Cache directory (relative to artifacts directory)
+    directory: ".template-cache"
+    
+    # Whether to use cache
+    enabled: true
+
+artifacts:
+  # Default artifacts directory
+  directory: "artifacts"
+  
+  # Subdirectories
+  logs: "logs"
+  reports: "reports"

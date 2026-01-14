@@ -61,19 +61,40 @@ Templates support conditional blocks:
 
 The `/init-cursorworkspace` slash command can be used directly in Cursor IDE. The command file (`.cursor/commands/init-cursorworkspace.mdc`) is included in this repository and should be copied to your project's `.cursor/commands/` directory.
 
+**Workflow:**
+1. Clone the `cursor-workspace-init` repository
+2. Copy `.cursor/commands/init-cursorworkspace.mdc` to your project's `.cursor/commands/`
+3. Run `/init-cursorworkspace` in Cursor IDE
+
 ### Using the Shell Script
 
 Alternatively, you can use the `init-cursorworkspace.sh` shell script:
 
-```bash
-./init-cursorworkspace.sh
-```
+**Workflow:**
+1. Clone the `cursor-workspace-init` repository
+2. Navigate to your project directory
+3. Run: `./path/to/cursor-workspace-init/init-cursorworkspace.sh`
 
 With options:
 ```bash
 ./init-cursorworkspace.sh --no-analyze          # Skip analysis if projectFile.md exists
 ./init-cursorworkspace.sh --skip-validation     # Skip validation step
-./init-cursorworkspace.sh --project-root /path  # Specify project root
+```
+
+### Complete Workflow
+
+```bash
+# 1. Clone the tool repository
+git clone https://github.com/MartinMayday/cursor-workspace-init.git
+cd cursor-workspace-init
+pip install -r dev/src/requirements.txt
+
+# 2. Navigate to your project
+cd /path/to/your/project
+
+# 3. Run the initialization
+../cursor-workspace-init/init-cursorworkspace.sh
+# OR copy .cursor/commands/init-cursorworkspace.mdc and run /init-cursorworkspace in Cursor IDE
 ```
 
 ### Workflow

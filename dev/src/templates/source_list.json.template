@@ -1,0 +1,15 @@
+{
+  "sources": [
+    {
+      "type": "documentation",
+      "description": "Official documentation for <PLACEHOLDER: PRIMARY_LANGUAGE>",
+      "url": ""
+    },
+    {
+      "type": "documentation",
+      "description": "Framework documentation for <PLACEHOLDER: FRAMEWORK>",
+      "url": ""
+    }
+  ]
+}
+
