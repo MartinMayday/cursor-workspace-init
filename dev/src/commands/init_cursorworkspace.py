@@ -57,7 +57,15 @@ def run_init_workflow(project_root: Optional[str] = None,
         # Step 1: Check/create projectFile.md
         logger.start_operation('project_file_management')
         
-        if project_file_exists(project_root):
+        if project_file_exists(project_root) and analyze_codebase:
+            # projectFile.md exists but user wants to re-analyze
+            logger.info('project_file_management', 'projectFile.md exists but re-analyzing codebase as requested')
+            from scripts.analyze_existing_repo import analyze_repository
+            analysis_context = analyze_repository(str(project_root))
+            project_file_path = create_project_file(analysis_context, project_root)
+            context = analysis_context
+            logger.info('project_file_management', f'Updated projectFile.md from codebase analysis: {project_file_path}')
+        elif project_file_exists(project_root):
             # projectFile.md exists - skip analysis and use it directly
             logger.info('project_file_management', 'projectFile.md already exists - skipping analysis')
             context = extract_context_from_project_file(project_root)

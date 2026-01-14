@@ -13,6 +13,8 @@ def analyze_repository(repo_path: str = ".") -> Dict[str, Any]:
     """
     Analyze an existing repository and extract context variables.
     
+    Uses both static analyzers and LLM-powered semantic analysis for comprehensive understanding.
+    
     Args:
         repo_path: Path to the repository directory
         
@@ -33,8 +35,10 @@ def analyze_repository(repo_path: str = ".") -> Dict[str, Any]:
     from analyzers.existing_workspace_analyzer import analyze_existing_workspace
     from analyzers.pattern_detector import detect_patterns
     from analyzers.knowledge_extractor import extract_knowledge
+    from analyzers.semantic_analyzer import analyze_codebase_semantically
     
-    # Run all analyzers
+    print("🔍 Running static analyzers...")
+    # Run static analyzers first
     language_info = detect_language(repo_path)
     framework_info = detect_framework(repo_path)
     project_type_info = detect_project_type(repo_path)
@@ -46,6 +50,29 @@ def analyze_repository(repo_path: str = ".") -> Dict[str, Any]:
     existing_workspace_info = analyze_existing_workspace(repo_path)
     patterns_info = detect_patterns(repo_path)
     knowledge_info = extract_knowledge(repo_path)
+    
+    print("🤖 Running LLM-powered semantic analysis...")
+    # Run LLM-powered semantic analysis
+    semantic_info = analyze_codebase_semantically(repo_path)
+    
+    # Use semantic analysis results to enhance static analysis
+    if semantic_info.get("llm_analysis") and not semantic_info.get("error"):
+        # Enhance with semantic understanding
+        if semantic_info.get("project_description"):
+            content_info["project_description"] = semantic_info["project_description"]
+        if semantic_info.get("project_purpose"):
+            content_info["project_purpose"] = semantic_info["project_purpose"]
+        if semantic_info.get("key_concepts"):
+            content_info["key_concepts"] = list(set(content_info.get("key_concepts", []) + semantic_info["key_concepts"]))
+        if semantic_info.get("domain_terms"):
+            knowledge_info["domain_terms"] = list(set(knowledge_info.get("domain_terms", []) + semantic_info["domain_terms"]))
+        if semantic_info.get("architecture_understanding"):
+            project_type_info["architecture"] = semantic_info["architecture_understanding"]
+        if semantic_info.get("code_patterns"):
+            patterns_info["common_patterns"] = list(set(patterns_info.get("common_patterns", []) + semantic_info["code_patterns"]))
+    elif semantic_info.get("error"):
+        print(f"⚠️  LLM analysis skipped: {semantic_info['error']}")
+        print("   Continuing with static analysis only...")
     
     # Format technology stack
     technologies = format_technology_stack(framework_info.get('frameworks', []), language_info.get('languages', []))
