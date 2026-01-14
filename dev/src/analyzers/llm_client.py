@@ -89,14 +89,19 @@ def get_api_key(provider: str) -> Optional[str]:
     config = load_llm_config()
     provider = provider.lower()
     
-    if provider == "openai":
+    # If custom base URL is set, prefer OpenAI API key for compatibility
+    if config.get("openai_base_url") and config.get("openai_api_key"):
+        return config["openai_api_key"]
+    
+    if provider == "openai" or provider in ["zai", "custom"]:
         return config["openai_api_key"]
     elif provider == "anthropic":
         return config["anthropic_api_key"]
     elif provider == "openrouter":
         return config["openrouter_api_key"]
     
-    return None
+    # Fallback to OpenAI key if available
+    return config.get("openai_api_key")
 
 
 def get_model(provider: str) -> str:
@@ -104,13 +109,18 @@ def get_model(provider: str) -> str:
     config = load_llm_config()
     provider = provider.lower()
     
-    if provider == "openai":
+    # If custom base URL is set, use OpenAI model setting
+    if config.get("openai_base_url"):
+        return config.get("openai_model") or config["default_model"]
+    
+    if provider == "openai" or provider in ["zai", "custom"]:
         return config["openai_model"]
     elif provider == "anthropic":
         return config["anthropic_model"]
     elif provider == "openrouter":
         return config.get("openrouter_model") or config["default_model"]
     
+    # Fallback to default model
     return config["default_model"]
 
 
@@ -120,7 +130,7 @@ def call_llm(prompt: str, provider: Optional[str] = None, model: Optional[str] =
     
     Args:
         prompt: The prompt to send
-        provider: LLM provider ("openai", "anthropic", "openrouter")
+        provider: LLM provider ("openai", "anthropic", "openrouter", or any OpenAI-compatible)
         model: Model name (optional, uses default if not provided)
         
     Returns:
@@ -129,6 +139,16 @@ def call_llm(prompt: str, provider: Optional[str] = None, model: Optional[str] =
     config = load_llm_config()
     provider = (provider or config["default_provider"]).lower()
     model = model or get_model(provider)
+    
+    # Check for OpenAI-compatible endpoint (custom providers)
+    openai_base_url = config.get("openai_base_url")
+    openai_api_key = config.get("openai_api_key")
+    
+    # If custom base URL is set, use OpenAI-compatible API regardless of provider name
+    if openai_base_url and openai_api_key:
+        return _call_openai_compatible(prompt, model, openai_api_key, "openai", config)
+    
+    # Otherwise, use standard provider logic
     api_key = get_api_key(provider)
     
     if not api_key:
@@ -140,14 +160,17 @@ def call_llm(prompt: str, provider: Optional[str] = None, model: Optional[str] =
         }
     
     try:
-        if provider == "openai" or provider == "openrouter":
+        if provider == "openai" or provider == "openrouter" or provider in ["zai", "custom"]:
             return _call_openai_compatible(prompt, model, api_key, provider, config)
         elif provider == "anthropic":
             return _call_anthropic(prompt, model, api_key, config)
         else:
+            # Try OpenAI-compatible for unknown providers if we have OpenAI config
+            if openai_api_key:
+                return _call_openai_compatible(prompt, model, openai_api_key, provider, config)
             return {
                 "content": "",
-                "reasoning": f"Error: Unknown provider '{provider}'",
+                "reasoning": f"Error: Unknown provider '{provider}'. Supported: openai, anthropic, openrouter, or use OPENAI_BASE_URL for custom endpoints.",
                 "raw_response": "",
                 "error": "unknown_provider"
             }
@@ -161,7 +184,7 @@ def call_llm(prompt: str, provider: Optional[str] = None, model: Optional[str] =
 
 
 def _call_openai_compatible(prompt: str, model: str, api_key: str, provider: str, config: Dict[str, Any]) -> Dict[str, Any]:
-    """Call OpenAI-compatible API (OpenAI or OpenRouter)."""
+    """Call OpenAI-compatible API (OpenAI, OpenRouter, or custom endpoints)."""
     try:
         import openai
     except ImportError:
@@ -172,9 +195,12 @@ def _call_openai_compatible(prompt: str, model: str, api_key: str, provider: str
             "error": "missing_package"
         }
     
+    # Determine base URL
     base_url = config.get("openai_base_url")
-    if provider == "openrouter":
+    if provider == "openrouter" and not base_url:
         base_url = config.get("openrouter_base_url", "https://openrouter.ai/api/v1")
+    elif not base_url:
+        base_url = "https://api.openai.com/v1"  # Default OpenAI endpoint
     
     client = openai.OpenAI(
         api_key=api_key,
