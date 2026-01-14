@@ -30,12 +30,18 @@ WORKSPACE_ROOT="$(pwd)"
 # Default values
 ANALYZE_CODEBASE=true
 SKIP_VALIDATION=false
+FORCE_ANALYZE=false
 
 # Parse arguments
 while [[ $# -gt 0 ]]; do
     case $1 in
         --no-analyze)
             ANALYZE_CODEBASE=false
+            shift
+            ;;
+        --force-analyze)
+            FORCE_ANALYZE=true
+            ANALYZE_CODEBASE=true
             shift
             ;;
         --skip-validation)
@@ -47,6 +53,7 @@ while [[ $# -gt 0 ]]; do
             echo ""
             echo "Options:"
             echo "  --no-analyze          Skip codebase analysis if projectFile.md exists"
+            echo "  --force-analyze       Force re-analysis even if projectFile.md exists"
             echo "  --skip-validation     Skip validation step"
             echo "  --help, -h             Show this help message"
             echo ""
