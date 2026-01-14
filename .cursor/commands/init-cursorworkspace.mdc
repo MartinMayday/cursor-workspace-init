@@ -1,0 +1,119 @@
+---
+name: init-cursorworkspace
+description: Initialize Cursor workspace by analyzing codebase, creating projectFile.md, fetching templates from GitHub, populating them with context, and validating the generated workspace.
+---
+
+# Initialize Cursor Workspace
+
+This command initializes a Cursor workspace by:
+
+1. Analyzing the codebase (or loading existing `projectFile.md`)
+2. Creating/updating `projectFile.md` with project context
+3. Fetching templates from GitHub repository
+4. Populating templates with project-specific context
+5. Generating `.cursor/rules/*` and `.cursor/commands/*` files
+6. Validating the generated workspace
+7. Generating a comprehensive report
+
+## Usage
+
+Run this command in your project root directory:
+
+```
+/init-cursorworkspace
+```
+
+## Configuration
+
+The command uses the following configuration (can be overridden via environment variables):
+
+- **Template Repository**: `https://github.com/MartinMayday/cursor-workspace-templates.git`
+  - Override: `CURSOR_TEMPLATES_REPO_URL`
+- **Template Branch**: `main`
+  - Override: `CURSOR_TEMPLATES_BRANCH`
+- **Artifacts Directory**: `artifacts/`
+  - Override: `CURSOR_ARTIFACTS_DIR`
+- **Template Cache**: `artifacts/.template-cache/`
+  - Override: `CURSOR_TEMPLATE_CACHE_DIR`
+
+## Workflow
+
+1. **Project File Management**
+   - Checks if `projectFile.md` exists
+   - If not, analyzes codebase using LLM-powered analyzers
+   - Creates/updates `projectFile.md` with extracted context
+
+2. **Template Fetching**
+   - Clones/pulls templates from GitHub repository
+   - Caches templates locally for faster subsequent runs
+
+3. **Template Population**
+   - Extracts context from `projectFile.md`
+   - Populates template placeholders with project context
+   - Generates workspace files in `.cursor/` directory
+
+4. **Validation**
+   - Validates file structure
+   - Checks for unreplaced placeholders
+   - Validates JSON manifests
+   - Tests hooks (if present)
+
+5. **Reporting**
+   - Generates markdown report in `artifacts/reports/`
+   - Includes validation results and recommendations
+
+## Output
+
+- **Logs**: `artifacts/logs/init-cursorworkspace-{timestamp}.jsonl`
+- **Report**: `artifacts/reports/init-cursorworkspace-report-{timestamp}.md`
+- **Project File**: `projectFile.md` (project root)
+
+## Examples
+
+### Basic Usage
+```
+/init-cursorworkspace
+```
+
+### Skip Codebase Analysis (use existing projectFile.md)
+```
+/init-cursorworkspace --no-analyze
+```
+
+### Skip Validation
+```
+/init-cursorworkspace --skip-validation
+```
+
+## Notes
+
+- The command enhances existing workspace files rather than overwriting them
+- Templates are cached locally to avoid repeated GitHub fetches
+- All operations are logged with timestamps for debugging
+- Validation ensures generated files are correct and complete
+
+## Execution
+
+```python
+import sys
+from pathlib import Path
+
+# Add dev/src to path
+sys.path.insert(0, str(Path(__file__).parent.parent.parent / 'dev' / 'src'))
+
+from commands.init_cursorworkspace import run_init_workflow
+
+# Run the initialization workflow
+results = run_init_workflow()
+
+if results['success']:
+    print(f"✅ Workspace initialization completed successfully!")
+    if results.get('report_path'):
+        print(f"📄 Report: {results['report_path']}")
+    if results.get('project_file_path'):
+        print(f"📝 Project file: {results['project_file_path']}")
+else:
+    print(f"❌ Workspace initialization failed!")
+    for error in results.get('errors', []):
+        print(f"  - {error}")
+```

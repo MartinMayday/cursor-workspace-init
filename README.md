@@ -12,6 +12,7 @@ This repository contains template files used by the `/init-cursorworkspace` slas
 .
 ├── .cursorrules.template              # Main cursor rules template
 ├── source_list.json.template          # Knowledge base source list template
+├── init-cursorworkspace.sh           # Shell script wrapper for the command
 └── .cursor/
     ├── AGENTS.md.template             # Agent configuration template
     ├── rules/
@@ -22,6 +23,7 @@ This repository contains template files used by the `/init-cursorworkspace` slas
     │   ├── level5-framework.mdc.template          # Framework-specific rules
     │   └── rules_manifest.json.template          # Rules manifest
     └── commands/
+        ├── init-cursorworkspace.mdc              # Slash command file
         ├── commands_manifest.json.template       # Commands manifest
         ├── test-commands.mdc.template           # Test command templates
         ├── build-commands.mdc.template          # Build command templates
@@ -55,13 +57,36 @@ Templates support conditional blocks:
 
 ## Usage
 
-These templates are automatically pulled and populated by the `/init-cursorworkspace` slash command. The command:
+### Using the Slash Command
 
-1. Analyzes the codebase
+The `/init-cursorworkspace` slash command can be used directly in Cursor IDE. The command file (`.cursor/commands/init-cursorworkspace.mdc`) is included in this repository and should be copied to your project's `.cursor/commands/` directory.
+
+### Using the Shell Script
+
+Alternatively, you can use the `init-cursorworkspace.sh` shell script:
+
+```bash
+./init-cursorworkspace.sh
+```
+
+With options:
+```bash
+./init-cursorworkspace.sh --no-analyze          # Skip analysis if projectFile.md exists
+./init-cursorworkspace.sh --skip-validation     # Skip validation step
+./init-cursorworkspace.sh --project-root /path  # Specify project root
+```
+
+### Workflow
+
+The initialization process:
+
+1. Analyzes the codebase (or loads existing `projectFile.md`)
 2. Creates/updates `projectFile.md` with project context
 3. Pulls templates from this repository
 4. Populates placeholders with project-specific values
 5. Generates `.cursor/` workspace files
+6. Validates the generated workspace
+7. Generates a comprehensive report
 
 ## Template Updates
 
